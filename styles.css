@@ -71,8 +71,8 @@ nav{gap:clamp(4px,1vw,12px)}
 .turn-face.turn-back{transform:rotateY(180deg);background:#fffefa}
 .turn-face .diary-writing{min-height:0}
 .turn-face .diary-photo-frame,.turn-face .diary-photo-empty{height:100%;min-height:250px}
-@keyframes turnBookForward{0%{transform:rotateY(0)}45%{box-shadow:10px 0 24px #648ba544}100%{transform:rotateY(-180deg);box-shadow:10px 0 24px #648ba500}}
-@keyframes turnBookBackward{0%{transform:rotateY(0)}45%{box-shadow:-10px 0 24px #648ba544}100%{transform:rotateY(180deg);box-shadow:-10px 0 24px #648ba500}}
+@keyframes turnBookForward{0%{transform:rotateY(0)}45%{box-shadow:10px 0 24px #648ba544}100%{transform:rotateY(180deg);box-shadow:10px 0 24px #648ba500}}
+@keyframes turnBookBackward{0%{transform:rotateY(0)}45%{box-shadow:-10px 0 24px #648ba544}100%{transform:rotateY(-180deg);box-shadow:-10px 0 24px #648ba500}}
 
 /* Photo placement and sticker editor, scoped only to the diary editor. */
 .diary-editor{margin-top:16px;padding:14px;border:1px solid #d7eaf5;border-radius:12px;background:#f4faff}
@@ -179,3 +179,88 @@ footer{color:#71839a;border-color:#e3e8f0}
 .diary-editor-sticker.selected{outline-color:#d99aba}
 .diary-editor-tools .sticker-choice{border-color:#e8cddd;background:#fff;color:#9a5b80}
 .diary-editor-tools input[type=range]{accent-color:#9a6c9c}
+
+
+/* Dark Jercle-inspired theme: keep the existing layout and blue/pink accents. */
+:root{
+ --ink:#eef1f8;--muted:#a0a9bb;--blue:#8fc7e8;--blue2:#202a38;--pale:#171b24;--line:#343b4a;--white:#202530;
+ --shadow:0 18px 48px rgba(0,0,0,.28);color-scheme:dark;
+}
+body{
+ color:#eef1f8;
+ background:radial-gradient(ellipse at 8% 0%,rgba(54,103,139,.22),transparent 36%),
+ radial-gradient(ellipse at 100% 35%,rgba(139,75,111,.16),transparent 34%),#10131a;
+}
+header{background:rgba(16,19,26,.9);border-bottom-color:#303746}
+.brand h1,.home-intro h2,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4{color:#f1f3f8}
+.brand small,.muted,.item small,.home-intro p,.page-heading p,.profile-bottom p{color:#a0a9bb}
+.logo{border-color:#40546b;background:linear-gradient(145deg,#24384b,#382b3c);box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.logo:before,.logo:after{border-color:#8eb8d6}
+.nav{color:#aab3c3}
+.nav:hover{background:#252d3a;color:#dce8f5}
+.nav.active{background:#302735;border-color:#69465f;color:#f0c5dc;box-shadow:inset 0 0 0 1px #ffffff0a}
+.eyebrow,.heading-note,.diary-counter{color:#9dbbd4}
+.home-intro h2{color:#f1f3f8}
+.noor{background:linear-gradient(135deg,#253d50,#202c3a 76%,#252b39);border-color:#3d5c74}
+.safa{background:linear-gradient(135deg,#3a2938,#302532 58%,#272938);border-color:#68445d}
+.profile-top{color:#b5c1d0}
+.profile-mark{border-color:#617a94;color:#dce8f5}
+.profile-initial{background:#151b25;border-color:#52677f;color:#c5dff0}
+.profile-bottom h3{color:#f0f2f8}
+.profile-line{background:#6c8aa4}
+.home-foot{color:#8e9caf}
+.page-heading{background:linear-gradient(110deg,#1d2a38 0%,#29232f 100%);border-color:#394253;box-shadow:var(--shadow)}
+.heading-note{color:#b2a4bd}
+.panel,.calendar-panel,.dialog{background:#1b202b;border-color:#394252;color:#edf0f6}
+.panel-title{border-bottom-color:#343c4b}
+.panel-title h3,.calendar-top h3,.selected-date h4{color:#e8edf5}
+.primary{background:#527fa7;color:#fff;border-color:#6795bc}
+.primary:hover{background:#6394bd}
+.ghost{background:#2c2632;color:#f0c8dc;border-color:#62445b}
+.ghost:hover{background:#3b2d3c}
+input,textarea,select{background:#131821;color:#eef1f8;border-color:#3a4556}
+input::placeholder,textarea::placeholder{color:#778397}
+input:focus,textarea:focus,select:focus{border-color:#82b6d7;box-shadow:0 0 0 3px rgba(112,166,204,.2)}
+label{color:#aebbd0}
+.item{border-color:#343c4b}
+.item strong{color:#e6ebf3}
+.item p{color:#a6b0c1}
+.item a{color:#9bc9e8}
+.calendar-controls button{background:#242b37;border-color:#3a4555;color:#d0dced}
+.weekday{color:#9aa9bd}
+.day{background:#151b24;border-color:#303a49;color:#e0e7f0}
+.day.outside{opacity:.35}
+.day.today{border-color:#79aecd;background:#1c2b38}
+.day.selected{background:#392a38;border-color:#b2769c;color:#f4d8e7}
+.event-dot{background:#263c4c;color:#c0dff1}
+.photo{background:#151b24;border-color:#343d4b}
+.photo button{background:#202633;color:#f2c9dd}
+.tag{background:#342a37;color:#edc5db;border-color:#60445a}
+.empty,.diary-empty{color:#9ba9bc}
+footer{color:#8794a8;border-color:#303847}
+.modal{background:rgba(4,6,10,.78)}
+.dialog{box-shadow:0 20px 70px rgba(0,0,0,.55)}
+/* Keep the diary legible while making the book itself dark. */
+.diary-desk{background:linear-gradient(135deg,#1c2b38 0%,#302431 100%);border-color:#394453}
+.diary-page{background:#202630;color:#edf0f6;box-shadow:inset 0 0 22px rgba(0,0,0,.16)}
+.diary-page.left{border-right-color:#424b59;background:repeating-linear-gradient(to bottom,#202630 0,#202630 31px,#34404d 32px)}
+.diary-page.right{background:#202630}
+.diary-page.left:after{background:linear-gradient(90deg,#090d1455,#252c37,#090d1444)}
+.diary-date{color:#c39bb5}
+.diary-page h3{color:#f0d7e5}
+.diary-writing{color:#d0d8e5}
+.diary-photo-frame{border-color:#48515e;background:#171d27;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.diary-photo-empty{border-color:#4a5667;color:#aab6c8;background:linear-gradient(135deg,#1b2936,#302431)}
+.diary-page-number{color:#a4adbb}
+.diary-arrow{border-color:#465468;background:#202733;color:#c4dff0}
+.diary-arrow:hover:not(:disabled){background:#392b39;border-color:#a36d90;color:#f4d8e7}
+.diary-turn-sheet .turn-face{background-color:#202630}
+.diary-turn-sheet .turn-face.turn-front{background:repeating-linear-gradient(to bottom,#202630 0,#202630 31px,#34404d 32px)}
+.diary-turn-sheet .turn-face.turn-back{background:#202630}
+.diary-editor{border-color:#3b4656;background:linear-gradient(135deg,#1b2936,#302431)}
+.diary-editor-stage{border-color:#52677e;background:repeating-linear-gradient(45deg,#18222e,#18222e 12px,#272431 12px,#272431 24px)}
+.diary-editor-placeholder,.diary-editor-help{color:#a7b4c7}
+.diary-editor-sticker{color:#e4a9cb}
+.diary-editor-sticker.selected{outline-color:#d99aba}
+.diary-editor-tools .sticker-choice{border-color:#5a4358;background:#242331;color:#f0c5dc}
+.diary-editor-tools input[type=range]{accent-color:#c17fa7}
