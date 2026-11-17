@@ -40,6 +40,56 @@ input,textarea,select{width:100%;border:1px solid #d9edf7;border-radius:12px;pad
 footer{text-align:center;color:#8ba8b8;font-size:12px;margin-top:35px}
 @media(max-width:760px){header{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:repeat(2,1fr)}nav{justify-content:flex-start}.hero{padding:26px}.hero-art{font-size:52px;padding:0}.section-head{align-items:flex-start;flex-direction:column}}
 @media(max-width:480px){.shell{padding:15px}.grid{grid-template-columns:1fr}.hero-art{display:none}.formgrid{grid-template-columns:1fr}.formgrid .wide{grid-column:auto}.nav{padding:8px 10px;font-size:13px}}
+
+/* --- cohesive site refresh --- */
+:root{--ink:#19394e;--muted:#6d8ba0;--blue:#9bd4f2;--pale:#eff9ff;--line:#d4eaf6;--white:#fff;--shadow:0 18px 50px rgba(63,125,158,.10)}
+body{background:radial-gradient(ellipse at 12% 0%,#d9f1ff 0,transparent 34%),radial-gradient(ellipse at 92% 28%,#e3f5ff 0,transparent 30%),#f7fcff;color:var(--ink);letter-spacing:.01em}
+.shell{max-width:1240px;padding:26px 34px 70px}
+header{position:sticky;top:0;z-index:10;margin:0 -34px 30px;padding:15px 34px 17px;background:rgba(247,252,255,.84);backdrop-filter:blur(18px);border-bottom:1px solid rgba(198,226,241,.7)}
+.brand{gap:14px}.logo{width:48px;height:48px;border-radius:16px;box-shadow:0 8px 22px #9bc8dc38}
+.brand h1{font-size:19px;letter-spacing:.02em;text-transform:lowercase}.brand small{font-size:11px;letter-spacing:.07em}
+nav{gap:5px}.nav{font-size:12px;letter-spacing:.035em;padding:10px 15px;border-radius:999px;transition:background .2s,color .2s,transform .2s}
+.nav:hover{transform:translateY(-1px)}.nav.active{background:#dff2fc;color:#285c79;box-shadow:inset 0 0 0 1px #c7e7f7}
+.home-intro{padding:75px 20px 48px}.home-intro .eyebrow{letter-spacing:.24em;font-size:10px}
+.home-intro h2{font-family:Georgia,serif;font-weight:400;letter-spacing:-.045em;font-size:clamp(42px,6vw,72px);color:#244a62;margin:18px 0 13px}
+.home-intro p{font-size:14px;letter-spacing:.04em}
+.profile-card{border-radius:7px;min-height:330px;padding:30px;border:1px solid #cde6f4;box-shadow:0 22px 55px #8bbbd128}
+.profile-card.noor{background:linear-gradient(135deg,#c5e9fb,#e8f7ff 75%,#f8fcff)}
+.profile-card.safa{background:linear-gradient(135deg,#f5fbff,#d9effb 58%,#c7e8f9)}
+.profile-card:hover{transform:translateY(-5px);box-shadow:0 28px 65px #8bbbd13d}
+.profile-top{font-size:9px;letter-spacing:.23em}.profile-mark{border-radius:50%;width:40px;height:40px;background:#ffffff50}
+.profile-initial{width:92px;height:92px;flex-basis:92px;font-size:42px;background:#ffffff85;border-color:#ffffffb0}
+.profile-bottom{gap:22px}.profile-bottom h3{font-family:Georgia,serif;font-size:clamp(34px,4vw,48px);font-weight:400;letter-spacing:.11em}
+.profile-bottom p{font-size:12px;letter-spacing:.035em}.profile-line{margin-top:29px}
+.home-foot{font-size:9px;letter-spacing:.2em;margin-top:34px}
+.page{animation:pageIn .35s ease both}.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-head{margin:45px 2px 24px;padding:28px 30px;border:1px solid #d8edf8;background:linear-gradient(115deg,#e5f5fd,#f8fcff 75%);border-radius:7px;box-shadow:var(--shadow);min-height:135px;align-items:center}
+.section-head h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(30px,4vw,42px);letter-spacing:-.035em;color:#244a62}
+.section-head p{font-size:13px;letter-spacing:.025em;margin-top:7px}
+.grid{gap:18px;align-items:stretch}
+.panel{border-radius:7px;padding:24px;border:1px solid #d6eaf5;background:rgba(255,255,255,.82);box-shadow:var(--shadow);transition:box-shadow .2s,border-color .2s}
+.panel:hover{border-color:#c2e2f2;box-shadow:0 22px 55px rgba(63,125,158,.13)}
+.toolbar{gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #e6f2f8}
+.toolbar h3{font-family:Georgia,serif;font-size:21px;font-weight:400;letter-spacing:-.02em;color:#315d77;margin:0}
+.primary{background:#b9e3f7;color:#214e68;border:1px solid #a9d9f1;border-radius:4px;padding:10px 16px;font-size:12px;letter-spacing:.025em;transition:.2s}
+.primary:hover{background:#a6d9f2;transform:translateY(-1px)}
+.ghost{border-radius:4px;background:#eff8fd;color:#527d96}
+.item{padding:15px 0;border-color:#e7f2f8;gap:14px}.item strong{font-size:14px;color:#31566d}.item small{font-size:11px;letter-spacing:.025em}.item p{font-size:13px;line-height:1.6}
+.item-actions button{border-radius:4px;padding:7px 10px}
+.empty{padding:40px 15px;font-family:Georgia,serif;font-style:italic;font-size:15px;color:#8aa8ba}
+input,textarea,select{border-radius:4px;border-color:#d6eaf5;background:#fbfeff;font-size:13px;padding:12px 13px}
+input:focus,textarea:focus,select:focus{border-color:#91c9e7;box-shadow:0 0 0 3px #dff2fc}
+label{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#63859a}
+.tag{border-radius:3px;background:#eaf6fc;color:#5d8aa4;letter-spacing:.06em;text-transform:uppercase}
+.photo-grid{gap:12px}.photo{border-radius:4px;border:1px solid #dceef7;position:relative}.photo img{transition:transform .35s}.photo:hover img{transform:scale(1.04)}
+footer{border-top:1px solid #deeff7;padding-top:23px;margin-top:55px;font-size:9px;letter-spacing:.2em}
+.modal{backdrop-filter:blur(7px)}.dialog{border:1px solid #d5eaf5;border-radius:7px;padding:28px}.dialog h2{font-family:Georgia,serif;font-weight:400;font-size:28px}
+#spotifyPlayer{margin-top:22px;border-radius:6px;overflow:hidden;background:#eaf6fc}
+#spotifyPlayer iframe{display:block;width:100%;height:352px;border:0}
+@media(max-width:760px){.shell{padding:14px 18px 45px}header{margin:0 -18px 20px;padding:12px 18px 15px}.section-head{margin-top:25px;padding:23px;min-height:unset}.home-intro{padding:48px 10px 34px}.profile-card{min-height:270px}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.grid{grid-template-columns:1fr}.nav{padding:8px 11px;font-size:11px}.profile-card{min-height:235px;padding:22px}.profile-initial{width:70px;height:70px;flex-basis:70px;font-size:32px}.profile-bottom h3{font-size:31px}.home-foot{font-size:8px;letter-spacing:.12em}.section-head h2{font-size:31px}#spotifyPlayer iframe{height:300px}}
+
 </style></head>
 <body><div class="shell">
 <header><div class="brand"><div class="logo" aria-hidden="true"></div><div><h1>our cozy bubble</h1><small>a little place for the two of us </small></div></div>
@@ -72,7 +122,7 @@ footer{text-align:center;color:#8ba8b8;font-size:12px;margin-top:35px}
 <div class="grid"><div class="panel"><div class="toolbar"><h3>Photobooth</h3><button class="primary" id="photoBtn">＋ Add photos</button><input id="photoInput" type="file" accept="image/*" multiple hidden></div><div class="photo-grid" id="photos"><div class="empty">Your photo wall starts here </div></div></div>
 <div class="panel"><div class="toolbar"><h3>Our diary </h3><button class="primary" data-add="diary">＋ New entry</button></div><div id="diary" class="muted">A blank page, ready for a memory.</div></div></div></section>
 <section class="page" id="music"><div class="section-head"><div><h2>Our Music </h2><p>A little soundtrack for our friendship.</p></div></div>
-<div class="panel"><div class="toolbar"><h3>Spotify corner</h3><span class="tag">playlist embeds & links</span></div><p class="muted">Add a Spotify playlist, album or track link. You can paste a Spotify URL below to keep it here.</p><div class="formrow"><label>Spotify link</label><input id="spotifyUrl" placeholder="https://open.spotify.com/playlist/..."></div><div class="formrow"><label>Playlist name (optional)</label><input id="spotifyName" placeholder="Our shared playlist"></div><button class="primary" id="saveSpotify">＋ Save Spotify link</button><div id="spotifyList" style="margin-top:16px"></div><p class="muted" style="font-size:12px;margin-top:18px">For a Spotify Blend, create the Blend in Spotify first, then save its share link here. Spotify sign-in and playback integration can be added later.</p></div></section>
+<div class="panel"><div class="toolbar"><h3>Spotify corner</h3><span class="tag">playlist embeds & links</span></div><p class="muted">Add a Spotify playlist, album or track link. You can paste a Spotify URL below to keep it here.</p><div class="formrow"><label>Spotify link</label><input id="spotifyUrl" placeholder="https://open.spotify.com/playlist/..."></div><div class="formrow"><label>Playlist name (optional)</label><input id="spotifyName" placeholder="Our shared playlist"></div><button class="primary" id="saveSpotify">＋ Save Spotify link</button><div id="spotifyPlayer"></div><div id="spotifyList" style="margin-top:16px"></div><p class="muted" style="font-size:12px;margin-top:18px">For a Spotify Blend, create the Blend in Spotify first, then save its share link here. Spotify sign-in and playback integration can be added later.</p></div></section>
 <section class="page" id="little"><div class="section-head"><div><h2>Little Things </h2><p>Gift wishes, silly ideas and things to recreate.</p></div></div>
 <div class="grid"><div class="panel"><div class="toolbar"><h3>Gift ideas </h3><button class="primary" data-add="gift">＋ Add idea</button></div><div id="gifts" class="muted">A tiny wishlist, just for us.</div></div><div class="panel"><div class="toolbar"><h3>Reels to recreate </h3><button class="primary" data-add="reel">＋ Save reel</button></div><div id="reels" class="muted">Save the trends we want to try together.</div></div></div></section>
 </main><footer>OUR COZY BUBBLE · NOOR & SAFA</footer></div>
@@ -98,7 +148,7 @@ function list(k,target,empty,formatter){let a=get(k);$(target).innerHTML=a.lengt
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function render(){list('events','#events','No plans yet — add your first one!');list('places','#places','Our adventure list is waiting.');list('diary','#diary','A blank page, ready for a memory.');list('gifts','#gifts','A tiny wishlist, just for us.');list('reels','#reels','Save the trends we want to try together.',x=>'<button data-done="'+x.id+'" data-kind="reels">'+(x.done?' Done':'Mark done')+'</button>');renderSpotify();renderPhotos()}
 document.addEventListener('click',e=>{let d=e.target.closest('[data-delete]');if(d){put(d.dataset.delete,get(d.dataset.delete).filter(x=>x.id!=d.dataset.id));render()}let done=e.target.closest('[data-done]');if(done){let a=get(done.dataset.kind),x=a.find(x=>x.id==done.dataset.done);x.done=!x.done;put(done.dataset.kind,a);render()}});
-function renderSpotify(){let a=get('spotify');$('#spotifyList').innerHTML=a.length?a.map(x=>'<div class="item"><div style="flex:1"><strong> '+esc(x.name||'Our playlist')+'</strong><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open in Spotify ↗</a></p></div><div class="item-actions"><button data-spdel="'+x.id+'">×</button></div></div>').join(''):'<div class="empty">No songs saved yet </div>'}
+function renderSpotify(){let a=get('spotify');const first=a[0];let embed='';if(first){try{const u=new URL(first.url);if(u.hostname.endsWith('spotify.com')){const parts=u.pathname.split('/').filter(Boolean);if(parts.length>=2&&!['embed'].includes(parts[0]))embed='https://open.spotify.com/embed/'+parts.slice(0,2).join('/')+'?utm_source=generator&theme=0'}}catch(e){}}$('#spotifyPlayer').innerHTML=embed?'<iframe title="Spotify player" src="'+esc(embed)+'" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>':'';$('#spotifyList').innerHTML=a.length?a.map(x=>'<div class="item"><div style="flex:1"><strong>'+esc(x.name||'Our playlist')+'</strong><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open in Spotify ↗</a></p></div><div class="item-actions"><button data-spdel="'+x.id+'" aria-label="Remove saved Spotify link">Remove</button></div></div>').join(''):'<div class="empty">Your shared soundtrack starts here.</div>'}
 $('#saveSpotify').onclick=()=>{let url=$('#spotifyUrl').value.trim();if(!/^https?:\/\/(open\.)?spotify\.com\//i.test(url)){alert('Please paste a valid Spotify link.');return}let a=get('spotify');a.unshift({id:Date.now(),url,name:$('#spotifyName').value.trim()});put('spotify',a);$('#spotifyUrl').value='';$('#spotifyName').value='';renderSpotify()};
 document.addEventListener('click',e=>{let b=e.target.closest('[data-spdel]');if(b){put('spotify',get('spotify').filter(x=>x.id!=b.dataset.spdel));renderSpotify()}});
 $('#photoBtn').onclick=()=>$('#photoInput').click();$('#photoInput').onchange=async e=>{let a=get('photos');for(let f of e.target.files){if(!f.type.startsWith('image/'))continue;let data=await new Promise(res=>{let r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(f)});a.unshift({id:Date.now()+Math.random(),name:f.name,data})}put('photos',a);e.target.value='';renderPhotos()};
