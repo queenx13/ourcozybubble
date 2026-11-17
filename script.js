@@ -158,7 +158,8 @@ function diaryPageMarkup(entry,side,pageNo){
 }
 function flipDiary(direction){
  const entries=get('diary');
- const step=direction<0?-1:1;
+ // The left control always moves to the previous entry; the right control always moves to the next.
+ const step=direction==='backward'?-1:1;
  const nextIndex=diaryIndex+step;
  if(nextIndex<0||nextIndex>=entries.length)return;
  const spread=$('#diarySpread');
@@ -183,5 +184,5 @@ function flipDiary(direction){
   renderDiary();
  },{once:true});
 }
-$('#diaryPrev').onclick=()=>flipDiary(-1);$('#diaryNext').onclick=()=>flipDiary(1);
+$('#diaryPrev').onclick=()=>flipDiary('backward');$('#diaryNext').onclick=()=>flipDiary('forward');
 renderAll();
