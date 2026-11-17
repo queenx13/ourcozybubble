@@ -156,6 +156,32 @@ function diaryPageMarkup(entry,side,pageNo){
  if(side==='left')return '<div class="diary-date">'+esc(entry.date||'A NOTE TO REMEMBER')+'</div><h3>'+esc(entry.title)+'</h3><div class="diary-writing">'+esc(entry.description||'This page is yours. Add a few words about this memory.')+'</div><span class="diary-page-number">'+pageNo+'</span>';
  return (entry.image?'<div class="diary-photo-frame">'+diaryArtMarkup(entry)+'</div>':'<div class="diary-photo-empty">A space for a photograph<br><small>Add one when editing this entry</small></div>')+'<span class="diary-page-number">'+pageNo+'</span>';
 }
-function flipDiary(direction){const a=get('diary'),nextIndex=diaryIndex+direction;if(nextIndex<0||nextIndex>=a.length)return;const spread=$('#diarySpread');if(spread.querySelector('.diary-turn-sheet'))return;const frontPage=spread.querySelector(direction>0?'.diary-page.right':'.diary-page.left');if(!frontPage)return;const sheet=document.createElement('div');sheet.className='diary-turn-sheet '+(direction>0?'turn-forward':'turn-backward');const front=frontPage.innerHTML;const back=diaryPageMarkup(a[nextIndex],direction>0?'left':'right',direction>0?nextIndex*2+1:nextIndex*2+2);sheet.innerHTML='<div class="turn-face turn-front">'+front+'</div><div class="turn-face turn-back">'+back+'</div>';spread.appendChild(sheet);sheet.addEventListener('animationend',()=>{diaryIndex=nextIndex;renderDiary()},{once:true})}
+function flipDiary(direction){
+ const entries=get('diary');
+ const step=direction<0?-1:1;
+ const nextIndex=diaryIndex+step;
+ if(nextIndex<0||nextIndex>=entries.length)return;
+ const spread=$('#diarySpread');
+ if(spread.querySelector('.diary-turn-sheet'))return;
+
+ // Forward: turn the right page toward the left. Backward: turn the left page toward the right.
+ const turningSide=step===1?'right':'left';
+ const revealSide=step===1?'left':'right';
+ const frontPage=spread.querySelector('.diary-page.'+turningSide);
+ if(!frontPage)return;
+
+ const sheet=document.createElement('div');
+ sheet.className='diary-turn-sheet '+(step===1?'turn-forward':'turn-backward');
+ const front=frontPage.innerHTML;
+ const revealedPageNumber=step===1?nextIndex*2+1:nextIndex*2+2;
+ const back=diaryPageMarkup(entries[nextIndex],revealSide,revealedPageNumber);
+ sheet.innerHTML='<div class="turn-face turn-front">'+front+'</div><div class="turn-face turn-back">'+back+'</div>';
+ spread.appendChild(sheet);
+ sheet.addEventListener('animationend',event=>{
+  if(event.target!==sheet)return;
+  diaryIndex=nextIndex;
+  renderDiary();
+ },{once:true});
+}
 $('#diaryPrev').onclick=()=>flipDiary(-1);$('#diaryNext').onclick=()=>flipDiary(1);
 renderAll();
