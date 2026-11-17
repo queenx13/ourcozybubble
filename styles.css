@@ -90,3 +90,92 @@ nav{gap:clamp(4px,1vw,12px)}
 .diary-photo-art .art-sticker{position:absolute;transform:translate(-50%,-50%);line-height:1;white-space:nowrap;text-shadow:0 2px 6px #fff;pointer-events:none}
 @media(max-width:650px){.diary-turn-sheet{display:none}}
 @media(prefers-reduced-motion:reduce){.diary-turn-sheet{animation-duration:.01ms!important}}
+
+
+/* Blue + pink palette update — intentionally colour-only, preserving the existing layout. */
+:root{
+ --ink:#24334f;
+ --muted:#596f89;
+ --blue:#b9e4f7;
+ --blue2:#e3f3fb;
+ --pale:#fff7fb;
+ --line:#d9e2f0;
+ --white:#ffffff;
+ --shadow:0 18px 48px rgba(75,91,135,.10);
+ color-scheme:light;
+}
+body{
+ color:var(--ink);
+ background:
+  radial-gradient(ellipse at 8% 0%,rgba(187,226,248,.65),transparent 35%),
+  radial-gradient(ellipse at 100% 35%,rgba(248,207,226,.55),transparent 34%),
+  #fffafd;
+}
+.brand h1,.home-intro h2,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4{color:#263653}
+.brand small,.muted,.item small{color:#596f89}
+.logo{border-color:#b8d9ee;background:linear-gradient(145deg,#c6eafa,#f8e6f0);box-shadow:0 8px 22px rgba(128,155,190,.22)}
+.logo:before,.logo:after{border-color:#7daacb}
+.nav{color:#526b86}
+.nav:hover{background:#e8f4fb;color:#294968}
+.nav.active{background:#f8e4ef;border-color:#edc4d9;color:#713c5b;box-shadow:inset 0 0 0 1px #fff}
+.eyebrow,.heading-note,.diary-counter{color:#6b789d}
+.home-intro h2{color:#263653}
+.home-intro p{color:#596f89}
+.noor{background:linear-gradient(135deg,#c8eafa 0%,#e6f5fc 76%,#f8fbff 100%);border-color:#b9dced}
+.safa{background:linear-gradient(135deg,#fff0f6 0%,#f9dfeb 58%,#f5eafa 100%);border-color:#edc9dc}
+.profile-top{color:#596f89}
+.profile-mark{border-color:#b4cce2;color:#405d80}
+.profile-initial{color:#405d80}
+.profile-bottom h3{color:#263653}
+.profile-bottom p{color:#526b86}
+.profile-line{background:#9bbbd5}
+.page-heading{background:linear-gradient(110deg,#e3f3fb 0%,#fff7fb 100%);border-color:#d8e3f0}
+.page-heading p{color:#596f89}
+.panel,.calendar-panel,.dialog{background:#fff;border-color:#dce4ef;color:#263653}
+.panel-title h3,.calendar-top h3,.selected-date h4{color:#314665}
+.primary{background:#527da8;color:#fff;border-color:#527da8}
+.primary:hover{background:#3f688f;color:#fff}
+.ghost{background:#fff5fa;color:#70445f;border-color:#edcddd}
+.ghost:hover{background:#f9e6ef}
+input,textarea,select{background:#fff;color:#263653;border-color:#d5e1ee}
+input:focus,textarea:focus,select:focus{border-color:#8bbbdc;box-shadow:0 0 0 3px rgba(190,225,245,.4)}
+label{color:#526b86}
+.item{border-color:#e5e8f0}
+.item strong{color:#314665}
+.item p{color:#596f89}
+.calendar-controls button{background:#f4f9fd;border-color:#d5e4ef;color:#405f80}
+.weekday{color:#657b99}
+.day{background:#fff;border-color:#e1e7f0;color:#344b68}
+.day.today{border-color:#8bbbdc;background:#eef8fd}
+.day.selected{background:#fae8f1;border-color:#e6afc9;color:#713c5b}
+.event-dot{background:#e6f3fa;color:#385e7c}
+.photo{background:#f5f8fc;border-color:#e0e6f0}
+.photo button{background:#fff;color:#70445f}
+.tag{background:#faeaf2;color:#70445f;border-color:#efcede}
+footer{color:#71839a;border-color:#e3e8f0}
+
+/* Diary pages keep their book geometry; only paper, ink and controls are recoloured. */
+.diary-desk{background:linear-gradient(135deg,#e8f5fc 0%,#fff2f8 100%);border-color:#d9e2ef}
+.diary-page{background:#fffdfd;color:#263653}
+.diary-page.left{border-right-color:#eadde5;background:repeating-linear-gradient(to bottom,#fffdfd 0,#fffdfd 31px,#e3edf4 32px)}
+.diary-page.right{background:#fffdfd}
+.diary-page.left:after{background:linear-gradient(90deg,#b7c7d84a,#fffdfd,#eacbdc44)}
+.diary-date{color:#8a6b88}
+.diary-page h3{color:#314665}
+.diary-writing{color:#455a75}
+.diary-photo-frame{border-color:#e8d8e2;background:#fff8fb;box-shadow:0 6px 18px rgba(92,79,111,.12)}
+.diary-photo-empty{border-color:#d8dfe9;color:#71839a;background:linear-gradient(135deg,#f4faff,#fff7fb)}
+.diary-page-number{color:#8a91a5}
+.diary-arrow{border-color:#cbdceb;background:#fff;color:#365d83}
+.diary-arrow:hover:not(:disabled){background:#f9e7f0;border-color:#e9bfd3;color:#713c5b}
+.diary-arrow:focus-visible,.nav:focus-visible,.primary:focus-visible,.ghost:focus-visible{outline:3px solid #8bbbdc;outline-offset:2px}
+.diary-empty{color:#6f809a}
+.diary-turn-sheet.turn-forward .turn-face{background-color:#fffdfd}
+.diary-turn-sheet.turn-backward .turn-face{background-color:#fffdfd}
+.diary-editor{border-color:#d9e2ef;background:linear-gradient(135deg,#f1f9fd,#fff6fa)}
+.diary-editor-stage{border-color:#b9d4e7;background:repeating-linear-gradient(45deg,#f8fcff,#f8fcff 12px,#fdf5f9 12px,#fdf5f9 24px)}
+.diary-editor-placeholder,.diary-editor-help{color:#667d97}
+.diary-editor-sticker{color:#a45f86}
+.diary-editor-sticker.selected{outline-color:#d99aba}
+.diary-editor-tools .sticker-choice{border-color:#e8cddd;background:#fff;color:#9a5b80}
+.diary-editor-tools input[type=range]{accent-color:#9a6c9c}
