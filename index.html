@@ -2,8 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#dff3ff"><title>Our Cozy Bubble ♡</title>
+<meta name="theme-color" content="#dff3ff"><title>Our Cozy Bubble</title>
 <style>
+.logo{position:relative;background:linear-gradient(145deg,#bde8ff,#e8f8ff)}
+.logo:before,.logo:after{content:"";position:absolute;border:1px solid #75b6d7;border-radius:50%}
+.logo:before{width:17px;height:17px;left:8px;top:8px}
+.logo:after{width:17px;height:17px;right:8px;bottom:8px}
+.home-intro{text-align:center;padding:76px 20px 48px}
+.home-intro h2{font-size:clamp(34px,5vw,58px);letter-spacing:-2px;line-height:1.05;margin:14px 0;color:#31536a}
+.home-intro p{color:#7894a7;margin:0;font-size:16px}
+.profiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:880px;margin:0 auto}
+.profile-card{position:relative;min-height:310px;border-radius:27px;padding:25px;overflow:hidden;border:1px solid #d2eaf7;box-shadow:0 18px 45px #9bc8dc35;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,box-shadow .25s}
+.profile-card:hover{transform:translateY(-6px);box-shadow:0 24px 55px #8dbdd435}
+.profile-card.noor{background:linear-gradient(145deg,#c6eaff 0%,#e8f7ff 72%,#f9fdff 100%)}
+.profile-card.safa{background:linear-gradient(145deg,#edf9ff 0%,#d9f0ff 60%,#c4e7fb 100%)}
+.profile-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:2px;font-weight:800;color:#6896b0}
+.profile-mark{width:38px;height:38px;border:1px solid #8fc3df;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:17px;color:#477c9a}
+.profile-bottom{display:flex;align-items:center;gap:19px;position:relative;z-index:1}
+.profile-initial{width:82px;height:82px;flex:0 0 82px;border-radius:50%;background:#ffffffa8;border:1px solid #ffffff;display:grid;place-items:center;color:#5489a7;font:38px Georgia,serif;box-shadow:0 8px 22px #8ebbd52b}
+.profile-bottom h3{font-size:clamp(27px,4vw,39px);letter-spacing:2px;margin:0;color:#31536a}
+.profile-bottom p{margin:3px 0 0;color:#66869a;font-size:13px}
+.profile-line{height:1px;background:#79b2d1;opacity:.55;width:100%;margin-top:25px}
+.home-foot{max-width:880px;margin:27px auto 0;display:flex;justify-content:space-between;color:#8aaabd;font-size:10px;letter-spacing:2px}
+@media(max-width:650px){.home-intro{padding:48px 10px 32px}.profiles{grid-template-columns:1fr;gap:14px}.profile-card{min-height:240px}.home-foot{padding:0 5px}}
+
 :root{--ink:#31536a;--muted:#7894a7;--blue:#a9dcf7;--pale:#edf9ff;--line:#d8edf8;--white:#fff;--shadow:0 12px 35px #9bc8dc30}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f5fcff,#e8f7ff 48%,#f8fcff);color:var(--ink);font:15px/1.55 ui-rounded,"Avenir Next",system-ui,sans-serif;min-height:100vh}
 button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.shell{max-width:1180px;margin:auto;padding:24px 22px 60px}
@@ -20,31 +42,41 @@ footer{text-align:center;color:#8ba8b8;font-size:12px;margin-top:35px}
 @media(max-width:480px){.shell{padding:15px}.grid{grid-template-columns:1fr}.hero-art{display:none}.formgrid{grid-template-columns:1fr}.formgrid .wide{grid-column:auto}.nav{padding:8px 10px;font-size:13px}}
 </style></head>
 <body><div class="shell">
-<header><div class="brand"><div class="logo">☁️</div><div><h1>our cozy bubble</h1><small>a little place for the two of us ♡</small></div></div>
+<header><div class="brand"><div class="logo" aria-hidden="true"></div><div><h1>our cozy bubble</h1><small>a little place for the two of us </small></div></div>
 <nav id="nav"><button class="nav active" data-page="home">Home</button><button class="nav" data-page="plans">Our Plans</button><button class="nav" data-page="memories">Memories</button><button class="nav" data-page="music">Music</button><button class="nav" data-page="little">Little Things</button></nav></header>
 <main>
-<section class="page active" id="home"><div class="hero"><div><div class="eyebrow">our tiny corner of the internet</div><h2>Welcome to our<br>cozy bubble ☁️</h2><p>A place to keep our plans, collect little memories, share songs and save all the things we want to do together.</p></div><div class="hero-art">🩵✨</div></div>
-<div class="section-head"><div><h2>Our little world</h2><p>Pick a corner and make yourself at home.</p></div><span class="tag">made with ♡</span></div>
-<div class="grid">
-<div class="card tile"><div><span class="emoji">🗓️</span><h3>Our Plans</h3><p>Dates, adventures and places on our list.</p></div><button data-go="plans">Open plans →</button></div>
-<div class="card tile"><div><span class="emoji">📸</span><h3>Our Memories</h3><p>Photos, diary entries and moments to keep.</p></div><button data-go="memories">Open memories →</button></div>
-<div class="card tile"><div><span class="emoji">🎧</span><h3>Our Music</h3><p>Songs and playlists that remind us of us.</p></div><button data-go="music">Open music →</button></div>
-<div class="card tile"><div><span class="emoji">🎁</span><h3>Little Things</h3><p>Gift ideas and reels we need to recreate.</p></div><button data-go="little">Explore →</button></div>
-<div class="card tile"><div><span class="emoji">💌</span><h3>A shared space</h3><p>Leave a note, save an idea, make a memory.</p></div><button data-go="memories">Add a note →</button></div>
-<div class="card tile"><div><span class="emoji">🌷</span><h3>Just because</h3><p>For all the tiny things that make us happy.</p></div><button data-go="little">Have a look →</button></div>
-</div></section>
-<section class="page" id="plans"><div class="section-head"><div><h2>Our Plans 🗓️</h2><p>All the things we're looking forward to.</p></div></div>
+<section class="page active" id="home">
+<div class="home-intro">
+  <div class="eyebrow">A PRIVATE LITTLE WORLD</div>
+  <h2>Two people. One little world.</h2>
+  <p>A space for everything we share.</p>
+</div>
+<div class="profiles">
+  <article class="profile-card noor">
+    <div class="profile-top"><span>PROFILE 01</span><span class="profile-mark">N</span></div>
+    <div class="profile-bottom"><div class="profile-initial">N</div><div><h3>NOOR</h3><p>One half of our cozy bubble.</p></div></div>
+    <div class="profile-line"></div>
+  </article>
+  <article class="profile-card safa">
+    <div class="profile-top"><span>PROFILE 02</span><span class="profile-mark">S</span></div>
+    <div class="profile-bottom"><div class="profile-initial">S</div><div><h3>SAFA</h3><p>One half of our cozy bubble.</p></div></div>
+    <div class="profile-line"></div>
+  </article>
+</div>
+<div class="home-foot"><span>NOOR & SAFA</span><span>EST. OUR LITTLE WORLD</span></div>
+</section>
+<section class="page" id="plans"><div class="section-head"><div><h2>Our Plans </h2><p>All the things we're looking forward to.</p></div></div>
 <div class="grid"><div class="panel"><div class="toolbar"><h3>Upcoming plans</h3><button class="primary" data-add="event">＋ Add plan</button></div><div id="events" class="muted">No plans yet — add your first one!</div></div>
-<div class="panel"><div class="toolbar"><h3>Places to visit 📍</h3><button class="primary" data-add="place">＋ Add place</button></div><div id="places" class="muted">Our adventure list is waiting.</div></div></div></section>
-<section class="page" id="memories"><div class="section-head"><div><h2>Our Memories 📸</h2><p>Little moments deserve a place to stay.</p></div></div>
-<div class="grid"><div class="panel"><div class="toolbar"><h3>Photobooth</h3><button class="primary" id="photoBtn">＋ Add photos</button><input id="photoInput" type="file" accept="image/*" multiple hidden></div><div class="photo-grid" id="photos"><div class="empty">Your photo wall starts here ♡</div></div></div>
-<div class="panel"><div class="toolbar"><h3>Our diary 💌</h3><button class="primary" data-add="diary">＋ New entry</button></div><div id="diary" class="muted">A blank page, ready for a memory.</div></div></div></section>
-<section class="page" id="music"><div class="section-head"><div><h2>Our Music 🎧</h2><p>A little soundtrack for our friendship.</p></div></div>
+<div class="panel"><div class="toolbar"><h3>Places to visit </h3><button class="primary" data-add="place">＋ Add place</button></div><div id="places" class="muted">Our adventure list is waiting.</div></div></div></section>
+<section class="page" id="memories"><div class="section-head"><div><h2>Our Memories </h2><p>Little moments deserve a place to stay.</p></div></div>
+<div class="grid"><div class="panel"><div class="toolbar"><h3>Photobooth</h3><button class="primary" id="photoBtn">＋ Add photos</button><input id="photoInput" type="file" accept="image/*" multiple hidden></div><div class="photo-grid" id="photos"><div class="empty">Your photo wall starts here </div></div></div>
+<div class="panel"><div class="toolbar"><h3>Our diary </h3><button class="primary" data-add="diary">＋ New entry</button></div><div id="diary" class="muted">A blank page, ready for a memory.</div></div></div></section>
+<section class="page" id="music"><div class="section-head"><div><h2>Our Music </h2><p>A little soundtrack for our friendship.</p></div></div>
 <div class="panel"><div class="toolbar"><h3>Spotify corner</h3><span class="tag">playlist embeds & links</span></div><p class="muted">Add a Spotify playlist, album or track link. You can paste a Spotify URL below to keep it here.</p><div class="formrow"><label>Spotify link</label><input id="spotifyUrl" placeholder="https://open.spotify.com/playlist/..."></div><div class="formrow"><label>Playlist name (optional)</label><input id="spotifyName" placeholder="Our shared playlist"></div><button class="primary" id="saveSpotify">＋ Save Spotify link</button><div id="spotifyList" style="margin-top:16px"></div><p class="muted" style="font-size:12px;margin-top:18px">For a Spotify Blend, create the Blend in Spotify first, then save its share link here. Spotify sign-in and playback integration can be added later.</p></div></section>
-<section class="page" id="little"><div class="section-head"><div><h2>Little Things 🎀</h2><p>Gift wishes, silly ideas and things to recreate.</p></div></div>
-<div class="grid"><div class="panel"><div class="toolbar"><h3>Gift ideas 🎁</h3><button class="primary" data-add="gift">＋ Add idea</button></div><div id="gifts" class="muted">A tiny wishlist, just for us.</div></div><div class="panel"><div class="toolbar"><h3>Reels to recreate 🎬</h3><button class="primary" data-add="reel">＋ Save reel</button></div><div id="reels" class="muted">Save the trends we want to try together.</div></div></div></section>
-</main><footer>our cozy bubble · a little world made for two 🩵</footer></div>
-<div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">Add something</h2><form id="entryForm"><div id="fields"></div><div class="dialog-actions"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary" type="submit">Save ♡</button></div></form></div></div>
+<section class="page" id="little"><div class="section-head"><div><h2>Little Things </h2><p>Gift wishes, silly ideas and things to recreate.</p></div></div>
+<div class="grid"><div class="panel"><div class="toolbar"><h3>Gift ideas </h3><button class="primary" data-add="gift">＋ Add idea</button></div><div id="gifts" class="muted">A tiny wishlist, just for us.</div></div><div class="panel"><div class="toolbar"><h3>Reels to recreate </h3><button class="primary" data-add="reel">＋ Save reel</button></div><div id="reels" class="muted">Save the trends we want to try together.</div></div></div></section>
+</main><footer>OUR COZY BUBBLE · NOOR & SAFA</footer></div>
+<div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">Add something</h2><form id="entryForm"><div id="fields"></div><div class="dialog-actions"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary" type="submit">Save </button></div></form></div></div>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const store={events:'ocb_events',places:'ocb_places',diary:'ocb_diary',gifts:'ocb_gifts',reels:'ocb_reels',spotify:'ocb_spotify',photos:'ocb_photos'};
@@ -64,12 +96,12 @@ $$('[data-add]').forEach(b=>b.onclick=()=>openForm(b.dataset.add));$('#cancel').
 $('#entryForm').onsubmit=e=>{e.preventDefault();let obj=Object.fromEntries(new FormData(e.target));let a=get(currentType);a.unshift({...obj,id:Date.now(),done:false});put(currentType,a);$('#modal').classList.remove('open');e.target.reset();render()};
 function list(k,target,empty,formatter){let a=get(k);$(target).innerHTML=a.length?a.map(x=>'<div class="item"><div style="flex:1"><strong>'+esc(x.title)+'</strong><small>'+esc(x.date||x.location||x.for||'')+'</small>'+(x.description?'<p>'+esc(x.description)+'</p>':'')+(x.url?'<p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open link ↗</a></p>':'')+'</div><div class="item-actions">'+(formatter?formatter(x):'')+'<button data-delete="'+k+'" data-id="'+x.id+'">×</button></div></div>').join(''):'<div class="empty">'+empty+'</div>'}
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function render(){list('events','#events','No plans yet — add your first one!');list('places','#places','Our adventure list is waiting.');list('diary','#diary','A blank page, ready for a memory.');list('gifts','#gifts','A tiny wishlist, just for us.');list('reels','#reels','Save the trends we want to try together.',x=>'<button data-done="'+x.id+'" data-kind="reels">'+(x.done?'✓ Done':'Mark done')+'</button>');renderSpotify();renderPhotos()}
+function render(){list('events','#events','No plans yet — add your first one!');list('places','#places','Our adventure list is waiting.');list('diary','#diary','A blank page, ready for a memory.');list('gifts','#gifts','A tiny wishlist, just for us.');list('reels','#reels','Save the trends we want to try together.',x=>'<button data-done="'+x.id+'" data-kind="reels">'+(x.done?' Done':'Mark done')+'</button>');renderSpotify();renderPhotos()}
 document.addEventListener('click',e=>{let d=e.target.closest('[data-delete]');if(d){put(d.dataset.delete,get(d.dataset.delete).filter(x=>x.id!=d.dataset.id));render()}let done=e.target.closest('[data-done]');if(done){let a=get(done.dataset.kind),x=a.find(x=>x.id==done.dataset.done);x.done=!x.done;put(done.dataset.kind,a);render()}});
-function renderSpotify(){let a=get('spotify');$('#spotifyList').innerHTML=a.length?a.map(x=>'<div class="item"><div style="flex:1"><strong>🎵 '+esc(x.name||'Our playlist')+'</strong><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open in Spotify ↗</a></p></div><div class="item-actions"><button data-spdel="'+x.id+'">×</button></div></div>').join(''):'<div class="empty">No songs saved yet ♡</div>'}
+function renderSpotify(){let a=get('spotify');$('#spotifyList').innerHTML=a.length?a.map(x=>'<div class="item"><div style="flex:1"><strong> '+esc(x.name||'Our playlist')+'</strong><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open in Spotify ↗</a></p></div><div class="item-actions"><button data-spdel="'+x.id+'">×</button></div></div>').join(''):'<div class="empty">No songs saved yet </div>'}
 $('#saveSpotify').onclick=()=>{let url=$('#spotifyUrl').value.trim();if(!/^https?:\/\/(open\.)?spotify\.com\//i.test(url)){alert('Please paste a valid Spotify link.');return}let a=get('spotify');a.unshift({id:Date.now(),url,name:$('#spotifyName').value.trim()});put('spotify',a);$('#spotifyUrl').value='';$('#spotifyName').value='';renderSpotify()};
 document.addEventListener('click',e=>{let b=e.target.closest('[data-spdel]');if(b){put('spotify',get('spotify').filter(x=>x.id!=b.dataset.spdel));renderSpotify()}});
 $('#photoBtn').onclick=()=>$('#photoInput').click();$('#photoInput').onchange=async e=>{let a=get('photos');for(let f of e.target.files){if(!f.type.startsWith('image/'))continue;let data=await new Promise(res=>{let r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(f)});a.unshift({id:Date.now()+Math.random(),name:f.name,data})}put('photos',a);e.target.value='';renderPhotos()};
-function renderPhotos(){let a=get('photos');$('#photos').innerHTML=a.length?a.map(x=>'<div class="photo"><img src="'+x.data+'" alt="'+esc(x.name)+'"></div>').join(''):'<div class="empty">Your photo wall starts here ♡</div>'}
+function renderPhotos(){let a=get('photos');$('#photos').innerHTML=a.length?a.map(x=>'<div class="photo"><img src="'+x.data+'" alt="'+esc(x.name)+'"></div>').join(''):'<div class="empty">Your photo wall starts here </div>'}
 render();
 </script></body></html>
