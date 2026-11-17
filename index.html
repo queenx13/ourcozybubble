@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#eaf6ff"><title>Our Cozy Bubble</title>
+<meta name="theme-color" content="#141619"><title>Our Cozy Bubble</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#17384d;--muted:#7894a8;--blue:#b9e2f6;--blue2:#dff2fc;--pale:#f4faff;--line:#d7eaf5;--white:#fff;--shadow:0 18px 48px rgba(53,111,145,.09)}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 8% 0%,#d8effc 0,transparent 34%),radial-gradient(ellipse at 100% 38%,#e5f4fc 0,transparent 32%),#f8fcff;font:14px/1.55 "Avenir Next",Avenir,system-ui,sans-serif;min-height:100vh}
@@ -45,6 +48,100 @@ footer{text-align:center;color:#8ba8b8;border-top:1px solid #deeff7;padding-top:
 .diary-actions{display:flex;justify-content:center;gap:8px;margin-top:13px}
 .diary-empty{min-height:360px;display:grid;place-items:center;text-align:center;font:italic 17px Georgia,serif;color:#8aa8ba;padding:30px}
 @media(max-width:650px){.diary-spread{grid-template-columns:1fr;min-height:0}.diary-page.left{border-radius:6px 6px 0 0;border-right:0;border-bottom:1px solid #e9e3d8}.diary-page.left:after{display:none}.diary-page.right{border-radius:0 0 6px 6px}.diary-writing{min-height:150px}.diary-photo-frame,.diary-photo-empty{height:230px}.diary-page-number{bottom:9px}}
+
+/* Jercle visual language: charcoal surfaces, warm taupe accents, Outfit + Chakra Petch */
+:root{--ink:#F1EEE6;--muted:#BEC1C0;--blue:#B6A18A;--blue2:#292D31;--pale:#141619;--line:#444A4F;--white:#22262A;--shadow:0 18px 45px rgba(0,0,0,.38);color-scheme:dark}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(circle at 12% 0%,#2D3036 0,transparent 36%),#141619;color:#F1EEE6;font-family:'Outfit',Arial,sans-serif}
+h1,h2,h3,h4,.brand,.home-intro h2,.profile-bottom h3,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4,.diary-page h3,.diary-entry h4{font-family:'Chakra Petch',Arial,sans-serif}
+.shell{max-width:1100px;padding:0 5% 60px}
+header{margin:0 calc(-1 * max(5%,(100vw - 1100px)/2)) 0;padding:18px max(5%,(100vw - 1100px)/2);background:rgba(20,22,25,.94);border-bottom:1px solid #444A4F;backdrop-filter:blur(18px);align-items:center}
+.brand h1{font-family:'Chakra Petch',Arial,sans-serif;font-weight:600;letter-spacing:-.045em;color:#F1EEE6}
+.brand small{color:#BEC1C0}
+.logo{border-color:#746451;background:linear-gradient(145deg,#B6A18A,#34302B);box-shadow:0 8px 22px #0005}
+.logo:before,.logo:after{border-color:#F1EEE6}
+nav{gap:clamp(4px,1vw,12px)}
+.nav{font-family:'Outfit',Arial,sans-serif;font-size:12px;color:#BEC1C0;border-radius:10px;padding:9px 11px}
+.nav:hover{background:#292D31;color:#F1EEE6}
+.nav.active{background:#B6A18A;border-color:#B6A18A;color:#141619;box-shadow:none;font-weight:700}
+.page{animation:fade .25s ease}
+.home-intro{padding:58px 20px 38px}
+.eyebrow,.heading-note,.diary-counter{color:#C5A788}
+.home-intro h2{color:#F1EEE6;font-weight:500;letter-spacing:-.035em}
+.home-intro p,.profile-bottom p{color:#BEC1C0}
+.profiles{gap:20px}
+.profile-card{border:1px solid #444A4F;border-radius:16px;box-shadow:0 18px 45px #0005}
+.profile-card:hover{box-shadow:0 22px 55px #0007}
+.noor{background:linear-gradient(145deg,#353A40,#282C31 78%)}
+.safa{background:linear-gradient(135deg,#3C3937,#2C2B2D 78%)}
+.profile-top{color:#C5A788}
+.profile-mark,.profile-initial{background:#22262A;border:1px solid #746451;color:#F1EEE6}
+.profile-bottom h3{color:#F1EEE6;font-weight:500}
+.profile-line{background:#B6A18A}
+.home-foot{color:#BEC1C0}
+.page-heading{background:linear-gradient(110deg,#292D31,#22262A 75%);border:1px solid #444A4F;border-radius:16px;box-shadow:var(--shadow);padding:26px 30px;margin:28px 0 20px}
+.page-heading h2{color:#F1EEE6;font-weight:500}
+.page-heading p{color:#BEC1C0}
+.panel{background:#22262A;border:1px solid #444A4F;border-radius:14px;box-shadow:var(--shadow)}
+.panel-title{border-color:#444A4F}
+.panel-title h3{color:#F1EEE6;font-weight:500}
+.muted,.item small,.item p{color:#BEC1C0}
+.primary,.ghost{border-radius:10px;font-family:'Outfit',Arial,sans-serif;font-weight:700;transition:transform .2s,background .2s}
+.primary{background:#B6A18A;color:#141619;border:1px solid #B6A18A}
+.primary:hover{background:#D1BCA3;transform:translateY(-1px)}
+.ghost{background:#292D31;color:#F1EEE6;border:1px solid #555B60}
+.ghost:hover{background:#353A40}
+input,textarea,select{background:#292D31;border:1px solid #444A4F;border-radius:10px;color:#F1EEE6}
+input:focus,textarea:focus{border-color:#B6A18A;box-shadow:0 0 0 3px #B6A18A30}
+label{color:#C5A788}
+.empty{color:#BEC1C0}
+.item{border-color:#444A4F}
+.item strong{color:#F1EEE6}
+.item a{color:#D1BCA3}
+.calendar-panel{background:#22262A}
+.calendar-top h3,.selected-date h4{color:#F1EEE6}
+.calendar-controls button{background:#292D31;border:1px solid #444A4F;color:#F1EEE6;border-radius:10px}
+.weekday{color:#BEC1C0}
+.day{background:#292D31;border:1px solid #444A4F;color:#F1EEE6;border-radius:9px}
+.day.outside{opacity:.35}
+.day.today{border-color:#C5A788;background:#34302B}
+.day.selected{background:#3F4548;border-color:#B6A18A;box-shadow:inset 0 0 0 1px #B6A18A}
+.event-dot{background:#B6A18A;color:#141619}
+.photo{background:#292D31;border:1px solid #444A4F;border-radius:12px}
+.photo button{background:#141619e8;color:#F1EEE6}
+.tag{background:#353A40;color:#D1BCA3;border:1px solid #555B60}
+.modal{background:#090a0bcc}
+.dialog{background:#22262A;border:1px solid #444A4F;border-radius:16px;color:#F1EEE6}
+.dialog h2{font-family:'Chakra Petch',Arial,sans-serif}
+footer{color:#BEC1C0;border-color:#444A4F}
+.diary-desk{background:linear-gradient(145deg,#292D31,#1d2023);border:1px solid #444A4F;border-radius:16px}
+.diary-page{background:#22262A;color:#F1EEE6;box-shadow:inset 0 0 22px #0002}
+.diary-page.left{border-right:1px solid #444A4F;background:repeating-linear-gradient(to bottom,#22262A 0,#22262A 31px,#3b4145 32px)}
+.diary-page.right{background:#22262A}
+.diary-page.left:after{background:linear-gradient(90deg,#090a0a88,#4a4f50,#090a0a55)}
+.diary-page h3{color:#F1EEE6;font-weight:500}
+.diary-date{color:#C5A788}
+.diary-writing{color:#D8D5CD}
+.diary-photo-frame{background:#292D31;border-color:#555B60;box-shadow:0 6px 18px #0005}
+.diary-photo-empty{border-color:#555B60;color:#BEC1C0}
+.diary-page-number{color:#BEC1C0}
+.diary-arrow{background:#292D31;border:1px solid #555B60;color:#F1EEE6}
+.diary-arrow:hover:not(:disabled){background:#B6A18A;color:#141619}
+.diary-actions{gap:10px}
+.diary-turn-sheet{position:absolute;top:0;bottom:0;width:50%;z-index:6;transform-style:preserve-3d;pointer-events:none}
+.diary-turn-sheet.turn-forward{right:0;transform-origin:left center;animation:turnBookForward .62s cubic-bezier(.22,.72,.25,1) forwards}
+.diary-turn-sheet.turn-backward{left:0;transform-origin:right center;animation:turnBookBackward .62s cubic-bezier(.22,.72,.25,1) forwards}
+.turn-face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:clamp(20px,4vw,42px);background:#22262A;box-shadow:inset 0 0 22px #0002}
+.turn-face.turn-front{background:repeating-linear-gradient(to bottom,#22262A 0,#22262A 31px,#3b4145 32px)}
+.turn-face.turn-back{transform:rotateY(180deg);background:#292D31}
+.turn-face .diary-writing{min-height:0}
+.turn-face .diary-photo-frame,.turn-face .diary-photo-empty{height:100%;min-height:250px}
+@keyframes turnBookForward{0%{transform:rotateY(0)}45%{box-shadow:10px 0 24px #0008}100%{transform:rotateY(-180deg);box-shadow:10px 0 24px #0000}}
+@keyframes turnBookBackward{0%{transform:rotateY(0)}45%{box-shadow:-10px 0 24px #0008}100%{transform:rotateY(180deg);box-shadow:-10px 0 24px #0000}}
+@media(max-width:900px){header{align-items:flex-start;flex-direction:column}nav{justify-content:flex-start}}
+@media(max-width:650px){.diary-turn-sheet{display:none}.diary-page.left{background:repeating-linear-gradient(to bottom,#22262A 0,#22262A 31px,#3b4145 32px)}}
+@media(prefers-reduced-motion:reduce){.diary-turn-sheet{animation-duration:.01ms!important}}
+
 </style>
 </head>
 <body><div class="shell">
@@ -106,7 +203,8 @@ $('#photoBtn').onclick=()=>$('#photoInput').click();$('#photoInput').onchange=as
 function renderPhotos(){const a=get('photos');$('#photos').innerHTML=a.length?a.map(x=>'<div class="photo"><img src="'+x.data+'" alt="'+esc(x.name)+'"><button data-phdel="'+x.id+'" aria-label="Remove photo">×</button></div>').join(''):'<div class="empty" style="grid-column:1/-1">No snapshots yet. Add the first one to our wall.</div>'}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-phdel]');if(b){put('photos',get('photos').filter(x=>x.id!=b.dataset.phdel));renderPhotos()}});
 function renderAll(){renderDiary();list('places','#placesList','Our list of places is waiting.','places');list('reels','#reelsList','Save a reel or trend you want to try together.','reels');renderDiary();renderPhotos();renderSpotify();renderCalendar()}
-function flipDiary(direction){const a=get('diary'),next=diaryIndex+direction;if(next<0||next>=a.length)return;const spread=$('#diarySpread');spread.classList.add(direction>0?'turn-next':'turn-prev');setTimeout(()=>{diaryIndex=next;renderDiary();const fresh=$('#diarySpread');fresh.classList.add(direction>0?'turn-prev':'turn-next');requestAnimationFrame(()=>requestAnimationFrame(()=>fresh.classList.remove('turn-prev','turn-next')))},180)}
+function diaryPageMarkup(entry,side,pageNo){if(side==='left')return '<div class="diary-date">'+esc(entry.date||'A NOTE TO REMEMBER')+'</div><h3>'+esc(entry.title)+'</h3><div class="diary-writing">'+esc(entry.description||'This page is yours. Add a few words about this memory.')+'</div><span class="diary-page-number">'+pageNo+'</span>';return (entry.image?'<div class="diary-photo-frame"><img src="'+entry.image+'" alt="Photo for '+esc(entry.title)+'"></div>':'<div class="diary-photo-empty">A space for a photograph<br><small>Add one when editing this entry</small></div>')+'<span class="diary-page-number">'+pageNo+'</span>'}
+function flipDiary(direction){const a=get('diary'),nextIndex=diaryIndex+direction;if(nextIndex<0||nextIndex>=a.length)return;const spread=$('#diarySpread');if(spread.querySelector('.diary-turn-sheet'))return;const frontPage=spread.querySelector(direction>0?'.diary-page.right':'.diary-page.left');if(!frontPage)return;const sheet=document.createElement('div');sheet.className='diary-turn-sheet '+(direction>0?'turn-forward':'turn-backward');const front=frontPage.innerHTML;const back=diaryPageMarkup(a[nextIndex],direction>0?'left':'right',direction>0?nextIndex*2+1:nextIndex*2+2);sheet.innerHTML='<div class="turn-face turn-front">'+front+'</div><div class="turn-face turn-back">'+back+'</div>';spread.appendChild(sheet);sheet.addEventListener('animationend',()=>{diaryIndex=nextIndex;renderDiary()},{once:true})}
 $('#diaryPrev').onclick=()=>flipDiary(-1);$('#diaryNext').onclick=()=>flipDiary(1);
 renderAll();
 </script></body></html>
