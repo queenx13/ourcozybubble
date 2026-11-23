@@ -419,11 +419,11 @@ footer{color:#aebbd0;border-color:#3b4760;font-family:"Special Elite",serif}
 </style>
 <script>
 const missingNode=new Proxy({}, {get:(t,p)=>p==='classList'?new Proxy({}, {get:()=>()=>{}}):p==='querySelector'?()=>null:p==='querySelectorAll'?()=>[]:p==='closest'?()=>null:p==='addEventListener'?()=>{}:undefined,set:()=>true});
-const $=s=>document.querySelector(s)||missingNode, $=s=>[...document.querySelectorAll(s)];
+const $=s=>document.querySelector(s)||missingNode; const all=s=>[...document.querySelectorAll(s)];
 const store={events:'ocb_events',places:'ocb_places',diary:'ocb_diary',reels:'ocb_reels',spotify:'ocb_spotify',photos:'ocb_photos'};
 const get=k=>{try{return JSON.parse(localStorage.getItem(store[k])||'[]')}catch(e){return[]}},put=(k,v)=>localStorage.setItem(store[k],JSON.stringify(v));
-function go(page){$$('.page').forEach(x=>x.classList.toggle('active',x.id===page));$$('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===page));if(page==='calendar')renderCalendar();window.scrollTo({top:0,behavior:'smooth'})}
-$$('[data-page]').forEach(b=>b.onclick=()=>go(b.dataset.page));
+function go(page){all('.page').forEach(x=>x.classList.toggle('active',x.id===page));all('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===page));if(page==='calendar')renderCalendar();window.scrollTo({top:0,behavior:'smooth'})}
+all('[data-page]').forEach(b=>b.onclick=()=>go(b.dataset.page));
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 let currentType='',editingDiaryId=null,diaryIndex=0,selectedDate=new Date().toISOString().slice(0,10),viewMonth=new Date();
 const configs={
@@ -460,7 +460,7 @@ function openForm(type,id=null){
  }
  $('#modal').classList.add('open');
 }
-$$('[data-add]').forEach(b=>b.onclick=()=>openForm(b.dataset.add));$('#addCalendarEvent').onclick=()=>openForm('event');$('#cancel').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('open')};
+all('[data-add]').forEach(b=>b.onclick=()=>openForm(b.dataset.add));$('#addCalendarEvent').onclick=()=>openForm('event');$('#cancel').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('open')};
 $('#entryForm').onsubmit=async e=>{
  e.preventDefault();
  const form=e.target,fd=new FormData(form),obj={};
@@ -516,7 +516,7 @@ function setupDiaryEditor(existing){
   drawDiaryEditorImage();
  };
  $('#diaryPhotoSize').oninput=e=>{editorArt.w=Number(e.target.value);$('#diaryPhotoSizeValue').textContent=editorArt.w+'%';drawDiaryEditorImage()};
- $$('[data-sticker]').forEach(btn=>btn.onclick=()=>{
+ all('[data-sticker]').forEach(btn=>btn.onclick=()=>{
   editorArt.stickers.push({char:btn.dataset.sticker,x:50,y:50,size:34});
   selectedSticker=editorArt.stickers.length-1;drawDiaryEditorStickers();
  });
