@@ -497,7 +497,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-spdel]');i
 $('#photoBtn').onclick=()=>$('#photoInput').click();$('#photoInput').onchange=async e=>{const a=get('photos');for(const f of e.target.files){if(f.type.startsWith('image/'))a.unshift({id:Date.now()+Math.random(),name:f.name,data:await fileData(f)})}put('photos',a);e.target.value='';renderPhotos()};
 function renderPhotos(){const a=get('photos');$('#photos').innerHTML=a.length?a.map(x=>'<div class="photo"><img src="'+x.data+'" alt="'+esc(x.name)+'"><button data-phdel="'+x.id+'" aria-label="Remove photo">×</button></div>').join(''):'<div class="empty" style="grid-column:1/-1">No snapshots yet. Add the first one to our wall.</div>'}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-phdel]');if(b){put('photos',get('photos').filter(x=>x.id!=b.dataset.phdel));renderPhotos()}});
-function renderAll(){renderDiary();list('places','#placesList','Our list of places is waiting.','places');list('reels','#reelsList','Save a reel or trend you want to try together.','reels');renderDiary();renderPhotos();renderSpotify();renderCalendar()}
+function renderAll(){const page=document.querySelector('main .page')?.id;if(page==='calendar')renderCalendar();if(page==='diary')renderDiary();if(page==='photobooth')renderPhotos();if(page==='music')renderSpotify();if(page==='places')list('places','#placesList','Our list of places is waiting.','places');if(page==='reels')list('reels','#reelsList','Save a reel or trend you want to try together.','reels')}
 
 // Diary photo editor: drag photos and stickers, resize photos, and save the layout with the entry.
 let editorArt={x:10,y:10,w:80,stickers:[]},selectedSticker=-1;
