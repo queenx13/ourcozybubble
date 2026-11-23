@@ -2,16 +2,21 @@
 
 A shared memories website for Noor and Safa.
 
-## Project files
+## Page files
 
-- `index.html` — page structure and navigation.
-- `styles.css` — visual design, responsive layout, and diary page-turn styling.
-- `script.js` — calendar, diary, photo wall, Spotify links, places, reels, and browser storage interactions.
+Each page is a self-contained HTML file. Its page markup, styling, and JavaScript are included directly in that file.
 
-## Editing guide
+- `index.html` — Home
+- `calendar.html` — Calendar and events
+- `photobooth.html` — Photo wall
+- `gifts.html` — Gifts
+- `music.html` — Spotify links and player
+- `diary.html` — Diary entries, photo editor, stickers, and page flipping
+- `places.html` — Places to visit
+- `reels.html` — Reels to recreate
 
-Keep the existing page structure in `index.html`. Make visual changes in `styles.css`, and interactive behavior changes in `script.js`. Avoid putting large blocks of CSS or JavaScript back into the HTML file.
+There are no separate CSS or JavaScript files. Shared visual styles and interaction helpers are embedded in each page so the pages can be edited independently.
 
-## Current storage
+## Storage
 
-Entries are currently saved in the browser's local storage. Cross-device synchronization will be added separately when the Firebase project is configured.
+The site continues to use browser `localStorage` with the existing `ocb_*` keys, so saved entries on the same browser remain compatible with the previous version. Data is still stored per browser/device; cross-device sync has not been configured yet.
