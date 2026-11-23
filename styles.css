@@ -264,3 +264,124 @@ footer{color:#8794a8;border-color:#303847}
 .diary-editor-sticker.selected{outline-color:#d99aba}
 .diary-editor-tools .sticker-choice{border-color:#5a4358;background:#242331;color:#f0c5dc}
 .diary-editor-tools input[type=range]{accent-color:#c17fa7}
+
+
+/* OUR COZY BUBBLE — midnight storybook theme */
+:root{
+ --ink:#24334f;--muted:#a9b7ce;--blue:#bde7f7;--blue2:#d9f1fa;
+ --pale:#fff7fb;--line:#46536d;--white:#fff7fb;
+ --shadow:0 18px 48px rgba(3,8,20,.34);
+ --night:#171d2d;--night2:#202940;--pink:#f3cde0;--blush:#fff7fb;
+}
+*{box-sizing:border-box}
+body{
+ color:#fff7fb;
+ background:
+  radial-gradient(ellipse at 8% 0%,rgba(189,231,247,.12),transparent 34%),
+  radial-gradient(ellipse at 95% 28%,rgba(243,205,224,.10),transparent 30%),
+  radial-gradient(circle at 18% 72%,rgba(189,231,247,.08) 0 1px,transparent 1.8px),
+  radial-gradient(circle at 82% 62%,rgba(243,205,224,.10) 0 1px,transparent 1.8px),
+  #171d2d;
+ background-size:auto,auto,83px 91px,107px 113px,auto;
+ font-family:"Outfit",system-ui,sans-serif;
+}
+header{
+ background:rgba(23,29,45,.91);border-bottom:1px solid #3b4862;
+ box-shadow:0 8px 30px rgba(4,8,18,.2);
+}
+.brand h1{font:600 25px/1.1 "Pixelify Sans",sans-serif;letter-spacing:.01em;color:#fff7fb}
+.brand small{font:11px "Special Elite",serif;color:#bde7f7;letter-spacing:.04em;text-transform:none}
+.logo{border:1px solid #60718e;background:linear-gradient(145deg,#263a57,#3a2d48);box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.logo:before,.logo:after{border-color:#bde7f7}
+nav{gap:5px}
+.nav{font:500 12px "Outfit",sans-serif;color:#bdc9dc;border-color:transparent;border-radius:8px}
+.nav:hover{background:#26344d;color:#bde7f7}
+.nav.active{background:#3a3048;border-color:#75516f;color:#f3cde0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.eyebrow,.heading-note,.diary-counter{font-family:"Special Elite",serif;color:#bde7f7;letter-spacing:.12em}
+.home-intro h2,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4{
+ font-family:"Pixelify Sans",sans-serif;font-weight:500;letter-spacing:0;color:#fff7fb;
+}
+.home-intro h2{font-size:clamp(39px,5.8vw,66px);text-shadow:0 0 28px rgba(189,231,247,.16)}
+.home-intro p,.page-heading p{color:#b5c0d3}
+.profiles{gap:20px}
+.profile-card{border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.22)}
+.noor{background:linear-gradient(145deg,#bde7f7,#d9f1fa 72%,#fff7fb);border-color:#d4f2fb;color:#24334f}
+.safa{background:linear-gradient(145deg,#f3cde0,#f9dfeb 72%,#fff7fb);border-color:#f8dfec;color:#51384d}
+.profile-top{color:#3d6078}
+.profile-mark{border-color:rgba(36,51,79,.35);color:#24334f}
+.profile-initial{background:rgba(255,247,251,.72);border-color:rgba(36,51,79,.18);color:#24334f}
+.profile-bottom h3{font:600 37px "Pixelify Sans",sans-serif;color:#24334f;letter-spacing:.04em}
+.profile-bottom p{color:#40566e}
+.profile-line{background:#536d83;opacity:.35}
+.home-foot{color:#aebbd0;font-family:"Special Elite",serif}
+.page-heading{
+ background:linear-gradient(115deg,#222d45,#302b42);
+ border:1px solid #48546d;border-radius:14px;box-shadow:var(--shadow);
+}
+.page-heading h2{font-size:clamp(32px,4vw,44px)}
+.heading-note{color:#f3cde0}
+.panel,.calendar-panel,.dialog{
+ background:linear-gradient(145deg,#202940,#1c2335);
+ border:1px solid #46536d;border-radius:12px;color:#fff7fb;
+ box-shadow:var(--shadow);
+}
+.panel-title{border-bottom-color:#3c4962}
+.panel-title h3,.calendar-top h3,.selected-date h4{color:#fff7fb}
+.primary,.ghost{border-radius:8px;font-family:"Outfit",sans-serif}
+.primary{background:#bde7f7;color:#24334f;border:1px solid #d6f2fb}
+.primary:hover{background:#d9f1fa}
+.ghost{background:#3a3048;color:#f3cde0;border:1px solid #76516d}
+.ghost:hover{background:#49364d}
+.tag{background:#3a3048;color:#f3cde0;border:1px solid #76516d;border-radius:6px;font-family:"Special Elite",serif}
+input,textarea,select{
+ background:#151c2c;color:#fff7fb;border:1px solid #485670;border-radius:7px;
+ font-family:"Outfit",sans-serif;
+}
+input::placeholder,textarea::placeholder{color:#8291aa}
+input:focus,textarea:focus,select:focus{border-color:#bde7f7;box-shadow:0 0 0 3px rgba(189,231,247,.15)}
+label{color:#bde7f7;font-family:"Special Elite",serif;letter-spacing:.04em}
+.item{border-color:#3b4760}
+.item strong{color:#fff7fb}
+.item p,.item small,.muted{color:#b5c0d3}
+.item a{color:#bde7f7}
+.item-actions button{background:#3a3048;color:#f3cde0;border:1px solid #76516d;border-radius:6px}
+.calendar-controls button{background:#27334d;border-color:#4a5a78;color:#bde7f7;border-radius:7px}
+.weekday{color:#b7c6d9;font-family:"Special Elite",serif}
+.day{background:#182136;border-color:#394762;color:#fff7fb;border-radius:7px}
+.day.today{border-color:#bde7f7;background:#263d55}
+.day.selected{background:#3a3048;border-color:#f3cde0;color:#fff7fb}
+.event-dot{background:#bde7f7;color:#24334f;border-radius:4px}
+.photo{background:#151c2c;border-color:#46536d;border-radius:9px}
+.photo button{background:#fff7fb;color:#24334f;border-radius:6px}
+.empty,.diary-empty{color:#b9c5d8}
+.modal{background:rgba(5,8,18,.82)}
+.dialog{background:#202940;border-color:#52617c}
+.dialog h2{font:500 28px "Pixelify Sans",sans-serif;color:#fff7fb}
+footer{color:#aebbd0;border-color:#3b4760;font-family:"Special Elite",serif}
+#spotifyPlayer iframe{border-radius:9px}
+/* The diary is a blush-white keepsake against the midnight desk. */
+.diary-desk{background:linear-gradient(140deg,#202d47,#342a43);border:1px solid #4a5873;border-radius:14px}
+.diary-toolbar .tag{font-size:10px}
+.diary-book{filter:drop-shadow(0 18px 24px rgba(0,0,0,.35))}
+.diary-page{background:#fff7fb;color:#24334f;box-shadow:inset 0 0 24px rgba(36,51,79,.06)}
+.diary-page.left{border-right-color:#e7dce5;background:repeating-linear-gradient(to bottom,#fff7fb 0,#fff7fb 31px,#dceaf0 32px)}
+.diary-page.right{background:#fff7fb}
+.diary-page.left:after{background:linear-gradient(90deg,#8b829044,#fff7fb,#8b829033)}
+.diary-date{color:#8b6684;font:12px "Special Elite",serif;letter-spacing:.08em}
+.diary-page h3{font:500 clamp(23px,3vw,34px) "Pixelify Sans",sans-serif;color:#24334f}
+.diary-writing{font:15px/2 "Special Elite",serif;color:#3b4962}
+.diary-photo-frame{border-color:#e7dce5;background:#f8edf3;box-shadow:0 6px 18px rgba(36,51,79,.12)}
+.diary-photo-empty{border-color:#d9c9d7;color:#8b6684;background:#fbf1f7;font-family:"Special Elite",serif}
+.diary-page-number{color:#8b8296}
+.diary-arrow{border-color:#64738d;background:#27334d;color:#bde7f7}
+.diary-arrow:hover:not(:disabled){background:#3a3048;border-color:#f3cde0;color:#f3cde0}
+.diary-turn-sheet .turn-face{background-color:#fff7fb}
+.diary-turn-sheet .turn-face.turn-front{background:repeating-linear-gradient(to bottom,#fff7fb 0,#fff7fb 31px,#dceaf0 32px)}
+.diary-turn-sheet .turn-face.turn-back{background:#fff7fb}
+.diary-editor{border-color:#4a5873;background:linear-gradient(140deg,#202d47,#342a43)}
+.diary-editor-stage{border-color:#64738d;background:repeating-linear-gradient(45deg,#172136,#172136 12px,#252d43 12px,#252d43 24px)}
+.diary-editor-placeholder,.diary-editor-help{color:#c1ccdc}
+.diary-editor-sticker{color:#c77fa8}
+.diary-editor-sticker.selected{outline-color:#f3cde0}
+.diary-editor-tools .sticker-choice{border-color:#76516d;background:#3a3048;color:#f3cde0}
+.diary-editor-tools input[type=range]{accent-color:#f3cde0}
