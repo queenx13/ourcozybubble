@@ -385,3 +385,19 @@ footer{color:#aebbd0;border-color:#3b4760;font-family:"Special Elite",serif}
 .diary-editor-sticker.selected{outline-color:#f3cde0}
 .diary-editor-tools .sticker-choice{border-color:#76516d;background:#3a3048;color:#f3cde0}
 .diary-editor-tools input[type=range]{accent-color:#f3cde0}
+
+
+/* Typography refinement: keep the typewriter character, lose the pixel display font. */
+.brand h1,.home-intro h2,.page-heading h2,.panel-title h3,
+.calendar-top h3,.selected-date h4,.profile-bottom h3,.dialog h2,
+.diary-page h3{
+  font-family:"Special Elite","Courier New",monospace !important;
+  font-weight:400 !important;letter-spacing:0 !important;text-shadow:none;
+}
+.brand h1{font-size:23px;line-height:1.15}
+.home-intro h2{font-size:clamp(38px,5.4vw,62px);line-height:1.12}
+.page-heading h2{font-size:clamp(30px,3.8vw,41px);line-height:1.15}
+.panel-title h3,.calendar-top h3,.selected-date h4{font-size:22px}
+.profile-bottom h3{font-size:35px}
+.dialog h2{font-size:27px}
+.diary-page h3{font-size:clamp(22px,2.8vw,31px)}
