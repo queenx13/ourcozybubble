@@ -466,17 +466,14 @@ footer{color:#52617a !important;border-color:#aab9cd !important}
 .diary-editor-stage{background:#d9e1ed !important}
 
 
-/* Soft pink checkerboard background from the supplied reference */
+/* True square pink checkerboard: four soft pink quadrants repeating */
+html, body { min-height:100%; }
 body {
-  background-color: #FBE9F3 !important;
-  background-image:
-    linear-gradient(45deg, #F6C6E1 25%, transparent 25%, transparent 75%, #F6C6E1 75%, #F6C6E1),
-    linear-gradient(45deg, #F6C6E1 25%, transparent 25%, transparent 75%, #F6C6E1 75%, #F6C6E1);
-  background-position: 0 0, 48px 48px;
-  background-size: 96px 96px;
-  background-attachment: fixed;
+  background: #FCE7F2 !important;
+  background-image: conic-gradient(#F7C5E0 0 25%, #FFEAF4 0 50%, #FAD3E8 0 75%, #F5BFDC 0) !important;
+  background-size: 96px 96px !important;
+  background-attachment: fixed !important;
 }
-
 </style>
 <script>
 const missingNode=new Proxy({}, {get:(t,p)=>p==='classList'?new Proxy({}, {get:()=>()=>{}}):p==='querySelector'?()=>null:p==='querySelectorAll'?()=>[]:p==='closest'?()=>null:p==='addEventListener'?()=>{}:undefined,set:()=>true});
