@@ -417,6 +417,56 @@ footer{color:#aebbd0;border-color:#3b4760;font-family:"Special Elite",serif}
 .dialog h2{font-size:27px}
 .diary-page h3{font-size:clamp(22px,2.8vw,31px)}
 .nav{text-decoration:none;display:inline-block}
+
+
+/* Palette refinement: calmer solid blue, with richer profile cards. */
+:root{
+ --ink:#26334d;--muted:#59677f;--blue:#9dbbd7;--blue2:#dce8f3;
+ --pale:#eef1f7;--line:#aab8ca;--white:#f5f3f7;
+}
+body{
+ background:#cbd9e9 !important;
+ background-image:none !important;
+ color:#26334d !important;
+}
+header{
+ background:#dce5f0 !important;
+ border-bottom:1px solid #aab9cd !important;
+ box-shadow:0 5px 18px rgba(39,54,79,.10) !important;
+}
+.page-heading,.panel,.calendar-panel,.dialog{
+ background:#e8edf5 !important;
+ border-color:#aab9cd !important;
+ box-shadow:0 8px 22px rgba(39,54,79,.10) !important;
+}
+.page-heading{background:#b7c9df !important}
+.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4{color:#26334d !important}
+.page-heading p,.panel p,.muted{color:#52617a}
+.profiles .noor{
+ background:#9dbbd7 !important;
+ border:1px solid #779bbd !important;
+ color:#26334d !important;
+}
+.profiles .safa{
+ background:#d4a8c0 !important;
+ border:1px solid #b985a4 !important;
+ color:#3e2d43 !important;
+}
+.noor .profile-top,.noor .profile-bottom p{color:#314963 !important}
+.safa .profile-top,.safa .profile-bottom p{color:#583d54 !important}
+.profile-initial{background:rgba(255,255,255,.42) !important}
+.profile-mark{border-color:rgba(38,51,77,.42) !important}
+.profile-line{background:rgba(38,51,77,.38) !important;opacity:1}
+.primary{background:#789bbd !important;color:#fff !important;border-color:#6789aa !important}
+.primary:hover{background:#688bad !important}
+.ghost,.nav.active,.tag{background:#e6d4e1 !important;color:#513d56 !important;border-color:#bd9bb4 !important}
+.nav{color:#34445f !important}
+.nav:hover{background:#c1d1e2 !important}
+input,textarea,select{background:#f7f5f8 !important;color:#26334d !important;border-color:#aab9cd !important}
+footer{color:#52617a !important;border-color:#aab9cd !important}
+.diary-desk,.diary-editor{background:#aebfd5 !important;border-color:#8399b5 !important}
+.diary-editor-stage{background:#d9e1ed !important}
+
 </style>
 <script>
 const missingNode=new Proxy({}, {get:(t,p)=>p==='classList'?new Proxy({}, {get:()=>()=>{}}):p==='querySelector'?()=>null:p==='querySelectorAll'?()=>[]:p==='closest'?()=>null:p==='addEventListener'?()=>{}:undefined,set:()=>true});
