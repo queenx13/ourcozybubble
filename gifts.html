@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10131a"><title>Gifts · Our Cozy Bubble</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body><div class="shell"><header><div class="brand"><div class="logo" aria-hidden="true"></div><div><h1>our cozy bubble</h1><small>a little place for the two of us</small></div></div>
+<nav id="nav"><a class="nav" href="./index.html">Home</a><a class="nav" href="./calendar.html">Calendar</a><a class="nav" href="./photobooth.html">Photobooth</a><a class="nav active" href="./gifts.html">Gifts</a><a class="nav" href="./music.html">Music</a><a class="nav" href="./diary.html">Diary</a><a class="nav" href="./places.html">Places to Visit</a><a class="nav" href="./reels.html">Reels to Recreate</a></nav></header><main><section class="page active" id="gifts"><div class="page-heading"><div><div class="eyebrow">SOMETHING TO LOOK FORWARD TO</div><h2>Gifts</h2><p>A little space reserved for thoughtful surprises.</p></div><span class="heading-note">A LITTLE WISHLIST</span></div><div class="panel"><div class="empty">This page is waiting for its first idea.</div></div></section></main><footer>OUR COZY BUBBLE · NOOR & SAFA</footer></div>
+<div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">Add something</h2><form id="entryForm"><div id="fields"></div><div class="dialog-actions"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary" type="submit">Save entry</button></div></form></div></div>
+<style>
+:root{--ink:#17384d;--muted:#7894a8;--blue:#b9e2f6;--blue2:#dff2fc;--pale:#f4faff;--line:#d7eaf5;--white:#fff;--shadow:0 18px 48px rgba(53,111,145,.09)}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 8% 0%,#d8effc 0,transparent 34%),radial-gradient(ellipse at 100% 38%,#e5f4fc 0,transparent 32%),#f8fcff;font:14px/1.55 "Avenir Next",Avenir,system-ui,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{max-width:1320px;margin:auto;padding:0 34px 70px}
+header{position:sticky;top:0;z-index:10;margin:0 -34px 28px;padding:15px 34px;background:rgba(248,252,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid #dcecf5;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:13px;min-width:200px}.logo{width:46px;height:46px;border:1px solid #a8d5eb;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#bce5f8,#f4fbff);position:relative;box-shadow:0 8px 22px #9bc8dc35}.logo:before,.logo:after{content:"";position:absolute;border:1px solid #78b5d3;border-radius:50%;width:17px;height:17px}.logo:before{left:7px;top:7px}.logo:after{right:7px;bottom:7px}.brand h1{margin:0;font:22px Georgia,serif;letter-spacing:-.5px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+nav{display:flex;justify-content:flex-end;gap:5px;flex-wrap:wrap}.nav{border:1px solid transparent;background:transparent;color:#6c899d;padding:9px 13px;border-radius:5px;font-size:11px;letter-spacing:.04em;transition:.2s}.nav:hover{background:#edf7fd;color:#315e79}.nav.active{background:#dff1fb;border-color:#c5e3f2;color:#204f6a;box-shadow:inset 0 0 0 1px #ffffff}
+.page{display:none;animation:fade .28s ease}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.home-intro{text-align:center;padding:65px 20px 42px}.eyebrow{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#6b9ab5;font-weight:700}.home-intro h2{font:clamp(42px,6vw,72px)/1.05 Georgia,serif;letter-spacing:-.055em;margin:17px 0 12px;color:#214a63}.home-intro p{color:var(--muted);font-size:13px;letter-spacing:.04em;margin:0}
+.profiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin:auto}.profile-card{min-height:310px;padding:28px;border:1px solid #cce5f3;border-radius:6px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 55px #8bbbd128;transition:.25s}.profile-card:hover{transform:translateY(-5px);box-shadow:0 27px 65px #8bbbd13d}.noor{background:linear-gradient(135deg,#c5e9fb,#e8f7ff 75%,#f9fdff)}.safa{background:linear-gradient(135deg,#f5fbff,#d9effb 58%,#c7e8f9)}.profile-top{display:flex;justify-content:space-between;align-items:center;color:#6997b1;font-size:9px;letter-spacing:.22em}.profile-mark{width:38px;height:38px;border:1px solid #8fc3df;border-radius:50%;display:grid;place-items:center;font:17px Georgia,serif}.profile-bottom{display:flex;align-items:center;gap:20px}.profile-initial{width:88px;height:88px;flex:0 0 88px;border-radius:50%;display:grid;place-items:center;background:#ffffff90;border:1px solid white;color:#5489a7;font:40px Georgia,serif}.profile-bottom h3{font:40px Georgia,serif;letter-spacing:.1em;margin:0}.profile-bottom p{font-size:11px;color:#66869a;margin:4px 0 0}.profile-line{height:1px;background:#79b2d1;opacity:.5}.home-foot{max-width:900px;margin:30px auto 0;display:flex;justify-content:space-between;color:#8aaabd;font-size:9px;letter-spacing:.2em}
+.page-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:28px 30px;margin:24px 0 20px;border:1px solid #d6eaf5;background:linear-gradient(110deg,#e2f3fc,#f8fcff 75%);box-shadow:var(--shadow);border-radius:6px}.page-heading h2{font:clamp(31px,4vw,43px)/1.1 Georgia,serif;letter-spacing:-.04em;margin:7px 0 0;color:#244a62}.page-heading p{color:var(--muted);margin:7px 0 0;font-size:12px}.heading-note{font-size:9px;letter-spacing:.15em;color:#79a0b6;text-transform:uppercase;white-space:nowrap}
+.panel{background:#ffffffd9;border:1px solid var(--line);border-radius:6px;padding:22px;box-shadow:var(--shadow);min-width:0}.panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px;padding-bottom:13px;border-bottom:1px solid #e4f0f7}.panel-title h3{font:21px Georgia,serif;margin:0;color:#315d77}.muted{color:var(--muted)}.primary,.ghost{border-radius:4px;padding:10px 15px;font-size:11px;letter-spacing:.04em;font-weight:700}.primary{background:#b9e3f7;color:#214e68;border:1px solid #a9d9f1}.primary:hover{background:#a6d9f2}.ghost{background:#eff8fd;color:#527d96;border:1px solid #dceef7}.empty{text-align:center;padding:42px 16px;color:#8aa8ba;font:italic 15px Georgia,serif}.layout-two{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.formrow{margin:0 0 13px}label{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#63859a;font-weight:700;margin-bottom:6px}input,textarea,select{width:100%;border:1px solid #d6eaf5;border-radius:4px;background:#fbfeff;padding:12px;color:var(--ink);outline:none;font-size:13px}textarea{min-height:100px;resize:vertical}input:focus,textarea:focus{border-color:#91c9e7;box-shadow:0 0 0 3px #dff2fc}
+.item{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-top:1px solid #e7f2f8}.item:first-child{border-top:0}.item-main{flex:1;min-width:0}.item strong{display:block;font-size:13px;color:#31566d}.item small{font-size:10px;color:var(--muted)}.item p{font-size:12px;line-height:1.6;color:#66869a;margin:5px 0 0;white-space:pre-wrap}.item a{color:#4b88aa;text-decoration:none}.item a:hover{text-decoration:underline}.item-actions{display:flex;gap:5px}.item-actions button{background:#eff8fd;color:#63869b;border:0;border-radius:4px;padding:6px 9px;font-size:10px}
+.calendar-panel{padding:20px}.calendar-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.calendar-top h3{font:25px Georgia,serif;margin:0}.calendar-controls{display:flex;gap:6px}.calendar-controls button{width:34px;height:34px;border:1px solid var(--line);background:#f4faff;color:#4d7790;border-radius:4px}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.weekday{text-align:center;padding:8px 0;color:#83a1b4;font-size:9px;text-transform:uppercase;letter-spacing:.08em}.day{min-height:76px;background:#fbfdff;border:1px solid #e5f1f7;border-radius:4px;padding:7px;text-align:left;color:#46677d;position:relative}.day.outside{opacity:.35}.day.today{border-color:#91c9e7;background:#f0f9ff}.day.selected{background:#dff2fc;border-color:#8fc7e4;box-shadow:inset 0 0 0 1px #b9e1f3}.day-number{font-size:11px}.event-dot{display:block;margin-top:5px;padding:2px 4px;background:#d4edf9;color:#477895;border-radius:2px;font-size:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.day-count{display:none}.selected-date{margin-top:18px;padding-top:15px;border-top:1px solid #e5f1f7}.selected-date h4{font:19px Georgia,serif;margin:0 0 8px}.photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.photo{aspect-ratio:1;overflow:hidden;background:#edf7fc;border:1px solid #dceef7;border-radius:4px;position:relative}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo button{position:absolute;right:5px;top:5px;background:#ffffffdf;border:0;border-radius:3px;padding:4px 7px;color:#456a80}.diary-entry{padding:18px 0;border-top:1px solid #e7f2f8}.diary-entry:first-child{border-top:0}.diary-entry h4{font:21px Georgia,serif;margin:3px 0 6px}.diary-entry p{color:#607f93;font-size:13px;white-space:pre-wrap}.diary-entry img{display:block;max-width:100%;max-height:280px;object-fit:cover;margin-top:12px;border-radius:4px;border:1px solid #dceef7}
+#spotifyPlayer{margin-top:20px;border-radius:4px;overflow:hidden}#spotifyPlayer iframe{display:block;width:100%;height:352px;border:0}.tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#eaf6fc;color:#5d8aa4;padding:5px 8px;border-radius:3px}
+.modal{position:fixed;inset:0;z-index:30;background:#17384d66;backdrop-filter:blur(7px);display:none;place-items:center;padding:18px}.modal.open{display:grid}.dialog{background:#fff;border:1px solid #d5eaf5;border-radius:6px;padding:27px;width:min(540px,100%);max-height:90vh;overflow:auto;box-shadow:0 20px 70px #31536a44}.dialog h2{font:28px Georgia,serif;margin:0 0 20px}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+footer{text-align:center;color:#8ba8b8;border-top:1px solid #deeff7;padding-top:22px;margin-top:55px;font-size:9px;letter-spacing:.2em}
+@media(max-width:900px){header{align-items:flex-start;flex-direction:column}.brand{min-width:0}nav{justify-content:flex-start}.layout-two{grid-template-columns:1fr}.day{min-height:64px}.photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.shell{padding:0 15px 45px}header{margin:0 -15px 18px;padding:12px 15px}.nav{font-size:10px;padding:8px 10px}.home-intro{padding:42px 8px 30px}.profiles{grid-template-columns:1fr;gap:12px}.profile-card{min-height:230px;padding:22px}.profile-initial{width:70px;height:70px;flex-basis:70px;font-size:32px}.profile-bottom h3{font-size:32px}.home-foot{font-size:8px;letter-spacing:.1em}.page-heading{padding:21px;align-items:flex-start;flex-direction:column}.heading-note{display:none}.calendar-panel{padding:12px}.calendar-grid{gap:3px}.day{min-height:53px;padding:4px}.weekday{font-size:8px}.event-dot{font-size:7px;padding:1px 2px}.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.calendar-top h3{font-size:21px}}
+
+.diary-desk{background:linear-gradient(135deg,#eaf5fc,#f8fbff);border:1px solid #d7eaf5;border-radius:8px;padding:clamp(12px,3vw,30px);box-shadow:var(--shadow)}
+.diary-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;flex-wrap:wrap}
+.diary-counter{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#7b9bb0}
+.diary-book{perspective:1800px;max-width:980px;margin:0 auto;filter:drop-shadow(0 15px 18px #648ba522)}
+.diary-spread{display:grid;grid-template-columns:1fr 1fr;min-height:490px;position:relative;transform-origin:center;transition:transform .42s ease,opacity .42s ease}
+.diary-spread.turn-next{transform:rotateY(-8deg) translateX(-10px);opacity:.4}.diary-spread.turn-prev{transform:rotateY(8deg) translateX(10px);opacity:.4}
+.diary-page{background:#fffefa;position:relative;padding:clamp(20px,4vw,42px);min-width:0;box-shadow:inset 0 0 22px #d7d0c51a}
+.diary-page.left{border-radius:7px 0 0 7px;border-right:1px solid #e9e3d8;background:repeating-linear-gradient(to bottom,#fffefa 0,#fffefa 31px,#e7eff3 32px)}
+.diary-page.right{border-radius:0 7px 7px 0;background:#fffefa}
+.diary-page.left:after{content:"";position:absolute;right:-5px;top:0;bottom:0;width:10px;background:linear-gradient(90deg,#b9b2a64a,#fffefa,#b9b2a633);z-index:2}
+.diary-date{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#86a6b9}
+.diary-page h3{font:clamp(23px,3vw,34px) Georgia,serif;font-weight:400;margin:13px 0 18px;color:#31566d}
+.diary-writing{font:15px/2 Georgia,serif;color:#526f80;white-space:pre-wrap;overflow-wrap:anywhere;min-height:280px}
+.diary-photo-frame{height:300px;border:1px solid #e4e0d9;background:#f6f7f5;padding:9px;transform:rotate(1deg);box-shadow:0 6px 18px #5c71801c;display:grid;place-items:center}
+.diary-photo-frame img{width:100%;height:100%;object-fit:contain}
+.diary-photo-empty{height:300px;border:1px dashed #d9e5eb;display:grid;place-items:center;text-align:center;padding:20px;color:#9ab0bd;font:italic 15px Georgia,serif}
+.diary-page-number{position:absolute;bottom:16px;color:#a5b4bc;font:11px Georgia,serif}.diary-page.left .diary-page-number{left:25px}.diary-page.right .diary-page-number{right:25px}
+.diary-controls{display:flex;justify-content:center;align-items:center;gap:15px;margin-top:20px}
+.diary-arrow{width:42px;height:42px;border:1px solid #cfe4f0;background:#fff;border-radius:50%;color:#47748f;font-size:20px}.diary-arrow:disabled{opacity:.35;cursor:not-allowed}
+.diary-actions{display:flex;justify-content:center;gap:8px;margin-top:13px}
+.diary-empty{min-height:360px;display:grid;place-items:center;text-align:center;font:italic 17px Georgia,serif;color:#8aa8ba;padding:30px}
+@media(max-width:650px){.diary-spread{grid-template-columns:1fr;min-height:0}.diary-page.left{border-radius:6px 6px 0 0;border-right:0;border-bottom:1px solid #e9e3d8}.diary-page.left:after{display:none}.diary-page.right{border-radius:0 0 6px 6px}.diary-writing{min-height:150px}.diary-photo-frame,.diary-photo-empty{height:230px}.diary-page-number{bottom:9px}}
+
+/* Typography and sizing aligned with Jercle; original Our Cozy Bubble layout retained. */
+:root{font-family:'Outfit',Arial,sans-serif;color:#17384d;color-scheme:light}
+body{font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#17384d}
+h1,h2,h3,h4,.brand,.home-intro h2,.profile-bottom h3,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4,.diary-page h3,.diary-entry h4{font-family:'Chakra Petch',Arial,sans-serif}
+h1{font-size:clamp(2.2rem,5vw,4.8rem);line-height:1.15;font-weight:500;letter-spacing:-.035em}
+h2{font-size:clamp(1.35rem,2.3vw,2rem);font-weight:500}
+.shell{max-width:1150px;padding:0 5% 60px}
+header{margin:0 calc(-1 * max(5%,(100vw - 1150px)/2)) 28px;padding:18px max(5%,calc((100vw - 1150px)/2));}
+.brand h1{font:600 1.9rem 'Chakra Petch',Arial,sans-serif;letter-spacing:-.045em}
+.brand small{font:10px 'Outfit',Arial,sans-serif}
+nav{gap:clamp(4px,1vw,12px)}
+.nav{font:500 12px 'Outfit',Arial,sans-serif;padding:9px 11px;border-radius:10px}
+.home-intro{padding:58px 20px 38px}
+.home-intro h2{font:500 clamp(2.2rem,5vw,4.8rem)/1.05 'Chakra Petch',Arial,sans-serif;letter-spacing:-.045em}
+.profile-bottom h3{font:500 2.1rem 'Chakra Petch',Arial,sans-serif}
+.page-heading h2{font:500 clamp(2.2rem,5vw,4.8rem)/1.1 'Chakra Petch',Arial,sans-serif;letter-spacing:-.04em}
+.panel-title h3,.calendar-top h3,.selected-date h4{font:500 1.35rem 'Chakra Petch',Arial,sans-serif}
+.primary,.ghost{font-family:'Outfit',Arial,sans-serif}
+.diary-page h3{font:400 clamp(23px,3vw,34px) 'Chakra Petch',Arial,sans-serif}
+.diary-writing{font:15px/2 'Outfit',Arial,sans-serif}
+
+/* Diary page-turn: the right-hand page turns from right to left. */
+.diary-turn-sheet{position:absolute;top:0;bottom:0;width:50%;z-index:6;transform-style:preserve-3d;pointer-events:none}
+.diary-turn-sheet.turn-forward{right:0;transform-origin:left center;animation:turnBookForward .62s cubic-bezier(.22,.72,.25,1) forwards}
+.diary-turn-sheet.turn-backward{left:0;transform-origin:right center;animation:turnBookBackward .62s cubic-bezier(.22,.72,.25,1) forwards}
+.turn-face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:clamp(20px,4vw,42px);background:#fffefa;box-shadow:inset 0 0 22px #d7d0c51a}
+.turn-face.turn-front{background:repeating-linear-gradient(to bottom,#fffefa 0,#fffefa 31px,#e7eff3 32px)}
+.turn-face.turn-back{transform:rotateY(180deg);background:#fffefa}
+.turn-face .diary-writing{min-height:0}
+.turn-face .diary-photo-frame,.turn-face .diary-photo-empty{height:100%;min-height:250px}
+@keyframes turnBookForward{0%{transform:rotateY(0)}45%{box-shadow:10px 0 24px #648ba544}100%{transform:rotateY(180deg);box-shadow:10px 0 24px #648ba500}}
+@keyframes turnBookBackward{0%{transform:rotateY(0)}45%{box-shadow:-10px 0 24px #648ba544}100%{transform:rotateY(-180deg);box-shadow:-10px 0 24px #648ba500}}
+
+/* Photo placement and sticker editor, scoped only to the diary editor. */
+.diary-editor{margin-top:16px;padding:14px;border:1px solid #d7eaf5;border-radius:12px;background:#f4faff}
+.diary-editor-stage{position:relative;width:100%;max-width:440px;aspect-ratio:4/3;margin:12px auto;overflow:hidden;border:1px dashed #a8cfe2;border-radius:8px;background:repeating-linear-gradient(45deg,#f7fcff,#f7fcff 12px,#edf7fc 12px,#edf7fc 24px);touch-action:none}
+.diary-editor-stage img[data-art-kind="photo"]{position:absolute;left:10%;top:10%;width:80%;height:auto;max-width:none;max-height:none;object-fit:contain;cursor:move;user-select:none;touch-action:none;filter:drop-shadow(0 4px 8px #4f718522)}
+.diary-editor-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#91aebe;font-size:13px;text-align:center;padding:20px}
+.diary-editor-sticker{position:absolute;transform:translate(-50%,-50%);cursor:move;user-select:none;touch-action:none;line-height:1;background:transparent;border:0;padding:2px;color:#5c91b0;text-shadow:0 2px 5px #fff;white-space:nowrap}
+.diary-editor-sticker.selected{outline:1px dashed #7eb9d8;border-radius:5px}
+.diary-editor-tools{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.diary-editor-tools .sticker-choice{padding:7px 11px;border:1px solid #cfe4f0;border-radius:8px;background:#fff;color:#5c91b0;font-size:18px}
+.diary-editor-tools input[type=range]{width:min(220px,100%);padding:0;accent-color:#7eb9d8}
+.diary-editor-help{font-size:12px;color:#7894a8;margin:6px 0}
+.diary-photo-art{position:relative;width:100%;height:100%;overflow:hidden}
+.diary-photo-art img{position:absolute;max-width:none;max-height:none;height:auto;object-fit:contain;filter:drop-shadow(0 4px 8px #4f718522)}
+.diary-photo-art .art-sticker{position:absolute;transform:translate(-50%,-50%);line-height:1;white-space:nowrap;text-shadow:0 2px 6px #fff;pointer-events:none}
+@media(max-width:650px){.diary-turn-sheet{display:none}}
+@media(prefers-reduced-motion:reduce){.diary-turn-sheet{animation-duration:.01ms!important}}
+
+
+/* Blue + pink palette update — intentionally colour-only, preserving the existing layout. */
+:root{
+ --ink:#24334f;
+ --muted:#596f89;
+ --blue:#b9e4f7;
+ --blue2:#e3f3fb;
+ --pale:#fff7fb;
+ --line:#d9e2f0;
+ --white:#ffffff;
+ --shadow:0 18px 48px rgba(75,91,135,.10);
+ color-scheme:light;
+}
+body{
+ color:var(--ink);
+ background:
+  radial-gradient(ellipse at 8% 0%,rgba(187,226,248,.65),transparent 35%),
+  radial-gradient(ellipse at 100% 35%,rgba(248,207,226,.55),transparent 34%),
+  #fffafd;
+}
+.brand h1,.home-intro h2,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4{color:#263653}
+.brand small,.muted,.item small{color:#596f89}
+.logo{border-color:#b8d9ee;background:linear-gradient(145deg,#c6eafa,#f8e6f0);box-shadow:0 8px 22px rgba(128,155,190,.22)}
+.logo:before,.logo:after{border-color:#7daacb}
+.nav{color:#526b86}
+.nav:hover{background:#e8f4fb;color:#294968}
+.nav.active{background:#f8e4ef;border-color:#edc4d9;color:#713c5b;box-shadow:inset 0 0 0 1px #fff}
+.eyebrow,.heading-note,.diary-counter{color:#6b789d}
+.home-intro h2{color:#263653}
+.home-intro p{color:#596f89}
+.noor{background:linear-gradient(135deg,#c8eafa 0%,#e6f5fc 76%,#f8fbff 100%);border-color:#b9dced}
+.safa{background:linear-gradient(135deg,#fff0f6 0%,#f9dfeb 58%,#f5eafa 100%);border-color:#edc9dc}
+.profile-top{color:#596f89}
+.profile-mark{border-color:#b4cce2;color:#405d80}
+.profile-initial{color:#405d80}
+.profile-bottom h3{color:#263653}
+.profile-bottom p{color:#526b86}
+.profile-line{background:#9bbbd5}
+.page-heading{background:linear-gradient(110deg,#e3f3fb 0%,#fff7fb 100%);border-color:#d8e3f0}
+.page-heading p{color:#596f89}
+.panel,.calendar-panel,.dialog{background:#fff;border-color:#dce4ef;color:#263653}
+.panel-title h3,.calendar-top h3,.selected-date h4{color:#314665}
+.primary{background:#527da8;color:#fff;border-color:#527da8}
+.primary:hover{background:#3f688f;color:#fff}
+.ghost{background:#fff5fa;color:#70445f;border-color:#edcddd}
+.ghost:hover{background:#f9e6ef}
+input,textarea,select{background:#fff;color:#263653;border-color:#d5e1ee}
+input:focus,textarea:focus,select:focus{border-color:#8bbbdc;box-shadow:0 0 0 3px rgba(190,225,245,.4)}
+label{color:#526b86}
+.item{border-color:#e5e8f0}
+.item strong{color:#314665}
+.item p{color:#596f89}
+.calendar-controls button{background:#f4f9fd;border-color:#d5e4ef;color:#405f80}
+.weekday{color:#657b99}
+.day{background:#fff;border-color:#e1e7f0;color:#344b68}
+.day.today{border-color:#8bbbdc;background:#eef8fd}
+.day.selected{background:#fae8f1;border-color:#e6afc9;color:#713c5b}
+.event-dot{background:#e6f3fa;color:#385e7c}
+.photo{background:#f5f8fc;border-color:#e0e6f0}
+.photo button{background:#fff;color:#70445f}
+.tag{background:#faeaf2;color:#70445f;border-color:#efcede}
+footer{color:#71839a;border-color:#e3e8f0}
+
+/* Diary pages keep their book geometry; only paper, ink and controls are recoloured. */
+.diary-desk{background:linear-gradient(135deg,#e8f5fc 0%,#fff2f8 100%);border-color:#d9e2ef}
+.diary-page{background:#fffdfd;color:#263653}
+.diary-page.left{border-right-color:#eadde5;background:repeating-linear-gradient(to bottom,#fffdfd 0,#fffdfd 31px,#e3edf4 32px)}
+.diary-page.right{background:#fffdfd}
+.diary-page.left:after{background:linear-gradient(90deg,#b7c7d84a,#fffdfd,#eacbdc44)}
+.diary-date{color:#8a6b88}
+.diary-page h3{color:#314665}
+.diary-writing{color:#455a75}
+.diary-photo-frame{border-color:#e8d8e2;background:#fff8fb;box-shadow:0 6px 18px rgba(92,79,111,.12)}
+.diary-photo-empty{border-color:#d8dfe9;color:#71839a;background:linear-gradient(135deg,#f4faff,#fff7fb)}
+.diary-page-number{color:#8a91a5}
+.diary-arrow{border-color:#cbdceb;background:#fff;color:#365d83}
+.diary-arrow:hover:not(:disabled){background:#f9e7f0;border-color:#e9bfd3;color:#713c5b}
+.diary-arrow:focus-visible,.nav:focus-visible,.primary:focus-visible,.ghost:focus-visible{outline:3px solid #8bbbdc;outline-offset:2px}
+.diary-empty{color:#6f809a}
+.diary-turn-sheet.turn-forward .turn-face{background-color:#fffdfd}
+.diary-turn-sheet.turn-backward .turn-face{background-color:#fffdfd}
+.diary-editor{border-color:#d9e2ef;background:linear-gradient(135deg,#f1f9fd,#fff6fa)}
+.diary-editor-stage{border-color:#b9d4e7;background:repeating-linear-gradient(45deg,#f8fcff,#f8fcff 12px,#fdf5f9 12px,#fdf5f9 24px)}
+.diary-editor-placeholder,.diary-editor-help{color:#667d97}
+.diary-editor-sticker{color:#a45f86}
+.diary-editor-sticker.selected{outline-color:#d99aba}
+.diary-editor-tools .sticker-choice{border-color:#e8cddd;background:#fff;color:#9a5b80}
+.diary-editor-tools input[type=range]{accent-color:#9a6c9c}
+
+
+/* Dark Jercle-inspired theme: keep the existing layout and blue/pink accents. */
+:root{
+ --ink:#eef1f8;--muted:#a0a9bb;--blue:#8fc7e8;--blue2:#202a38;--pale:#171b24;--line:#343b4a;--white:#202530;
+ --shadow:0 18px 48px rgba(0,0,0,.28);color-scheme:dark;
+}
+body{
+ color:#eef1f8;
+ background:radial-gradient(ellipse at 8% 0%,rgba(54,103,139,.22),transparent 36%),
+ radial-gradient(ellipse at 100% 35%,rgba(139,75,111,.16),transparent 34%),#10131a;
+}
+header{background:rgba(16,19,26,.9);border-bottom-color:#303746}
+.brand h1,.home-intro h2,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4{color:#f1f3f8}
+.brand small,.muted,.item small,.home-intro p,.page-heading p,.profile-bottom p{color:#a0a9bb}
+.logo{border-color:#40546b;background:linear-gradient(145deg,#24384b,#382b3c);box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.logo:before,.logo:after{border-color:#8eb8d6}
+.nav{color:#aab3c3}
+.nav:hover{background:#252d3a;color:#dce8f5}
+.nav.active{background:#302735;border-color:#69465f;color:#f0c5dc;box-shadow:inset 0 0 0 1px #ffffff0a}
+.eyebrow,.heading-note,.diary-counter{color:#9dbbd4}
+.home-intro h2{color:#f1f3f8}
+.noor{background:linear-gradient(135deg,#253d50,#202c3a 76%,#252b39);border-color:#3d5c74}
+.safa{background:linear-gradient(135deg,#3a2938,#302532 58%,#272938);border-color:#68445d}
+.profile-top{color:#b5c1d0}
+.profile-mark{border-color:#617a94;color:#dce8f5}
+.profile-initial{background:#151b25;border-color:#52677f;color:#c5dff0}
+.profile-bottom h3{color:#f0f2f8}
+.profile-line{background:#6c8aa4}
+.home-foot{color:#8e9caf}
+.page-heading{background:linear-gradient(110deg,#1d2a38 0%,#29232f 100%);border-color:#394253;box-shadow:var(--shadow)}
+.heading-note{color:#b2a4bd}
+.panel,.calendar-panel,.dialog{background:#1b202b;border-color:#394252;color:#edf0f6}
+.panel-title{border-bottom-color:#343c4b}
+.panel-title h3,.calendar-top h3,.selected-date h4{color:#e8edf5}
+.primary{background:#527fa7;color:#fff;border-color:#6795bc}
+.primary:hover{background:#6394bd}
+.ghost{background:#2c2632;color:#f0c8dc;border-color:#62445b}
+.ghost:hover{background:#3b2d3c}
+input,textarea,select{background:#131821;color:#eef1f8;border-color:#3a4556}
+input::placeholder,textarea::placeholder{color:#778397}
+input:focus,textarea:focus,select:focus{border-color:#82b6d7;box-shadow:0 0 0 3px rgba(112,166,204,.2)}
+label{color:#aebbd0}
+.item{border-color:#343c4b}
+.item strong{color:#e6ebf3}
+.item p{color:#a6b0c1}
+.item a{color:#9bc9e8}
+.calendar-controls button{background:#242b37;border-color:#3a4555;color:#d0dced}
+.weekday{color:#9aa9bd}
+.day{background:#151b24;border-color:#303a49;color:#e0e7f0}
+.day.outside{opacity:.35}
+.day.today{border-color:#79aecd;background:#1c2b38}
+.day.selected{background:#392a38;border-color:#b2769c;color:#f4d8e7}
+.event-dot{background:#263c4c;color:#c0dff1}
+.photo{background:#151b24;border-color:#343d4b}
+.photo button{background:#202633;color:#f2c9dd}
+.tag{background:#342a37;color:#edc5db;border-color:#60445a}
+.empty,.diary-empty{color:#9ba9bc}
+footer{color:#8794a8;border-color:#303847}
+.modal{background:rgba(4,6,10,.78)}
+.dialog{box-shadow:0 20px 70px rgba(0,0,0,.55)}
+/* Keep the diary legible while making the book itself dark. */
+.diary-desk{background:linear-gradient(135deg,#1c2b38 0%,#302431 100%);border-color:#394453}
+.diary-page{background:#202630;color:#edf0f6;box-shadow:inset 0 0 22px rgba(0,0,0,.16)}
+.diary-page.left{border-right-color:#424b59;background:repeating-linear-gradient(to bottom,#202630 0,#202630 31px,#34404d 32px)}
+.diary-page.right{background:#202630}
+.diary-page.left:after{background:linear-gradient(90deg,#090d1455,#252c37,#090d1444)}
+.diary-date{color:#c39bb5}
+.diary-page h3{color:#f0d7e5}
+.diary-writing{color:#d0d8e5}
+.diary-photo-frame{border-color:#48515e;background:#171d27;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.diary-photo-empty{border-color:#4a5667;color:#aab6c8;background:linear-gradient(135deg,#1b2936,#302431)}
+.diary-page-number{color:#a4adbb}
+.diary-arrow{border-color:#465468;background:#202733;color:#c4dff0}
+.diary-arrow:hover:not(:disabled){background:#392b39;border-color:#a36d90;color:#f4d8e7}
+.diary-turn-sheet .turn-face{background-color:#202630}
+.diary-turn-sheet .turn-face.turn-front{background:repeating-linear-gradient(to bottom,#202630 0,#202630 31px,#34404d 32px)}
+.diary-turn-sheet .turn-face.turn-back{background:#202630}
+.diary-editor{border-color:#3b4656;background:linear-gradient(135deg,#1b2936,#302431)}
+.diary-editor-stage{border-color:#52677e;background:repeating-linear-gradient(45deg,#18222e,#18222e 12px,#272431 12px,#272431 24px)}
+.diary-editor-placeholder,.diary-editor-help{color:#a7b4c7}
+.diary-editor-sticker{color:#e4a9cb}
+.diary-editor-sticker.selected{outline-color:#d99aba}
+.diary-editor-tools .sticker-choice{border-color:#5a4358;background:#242331;color:#f0c5dc}
+.diary-editor-tools input[type=range]{accent-color:#c17fa7}
+
+
+/* OUR COZY BUBBLE — midnight storybook theme */
+:root{
+ --ink:#24334f;--muted:#a9b7ce;--blue:#bde7f7;--blue2:#d9f1fa;
+ --pale:#fff7fb;--line:#46536d;--white:#fff7fb;
+ --shadow:0 18px 48px rgba(3,8,20,.34);
+ --night:#171d2d;--night2:#202940;--pink:#f3cde0;--blush:#fff7fb;
+}
+*{box-sizing:border-box}
+body{
+ color:#fff7fb;
+ background:
+  radial-gradient(ellipse at 8% 0%,rgba(189,231,247,.12),transparent 34%),
+  radial-gradient(ellipse at 95% 28%,rgba(243,205,224,.10),transparent 30%),
+  radial-gradient(circle at 18% 72%,rgba(189,231,247,.08) 0 1px,transparent 1.8px),
+  radial-gradient(circle at 82% 62%,rgba(243,205,224,.10) 0 1px,transparent 1.8px),
+  #171d2d;
+ background-size:auto,auto,83px 91px,107px 113px,auto;
+ font-family:"Outfit",system-ui,sans-serif;
+}
+header{
+ background:rgba(23,29,45,.91);border-bottom:1px solid #3b4862;
+ box-shadow:0 8px 30px rgba(4,8,18,.2);
+}
+.brand h1{font:600 25px/1.1 "Pixelify Sans",sans-serif;letter-spacing:.01em;color:#fff7fb}
+.brand small{font:11px "Special Elite",serif;color:#bde7f7;letter-spacing:.04em;text-transform:none}
+.logo{border:1px solid #60718e;background:linear-gradient(145deg,#263a57,#3a2d48);box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.logo:before,.logo:after{border-color:#bde7f7}
+nav{gap:5px}
+.nav{font:500 12px "Outfit",sans-serif;color:#bdc9dc;border-color:transparent;border-radius:8px}
+.nav:hover{background:#26344d;color:#bde7f7}
+.nav.active{background:#3a3048;border-color:#75516f;color:#f3cde0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.eyebrow,.heading-note,.diary-counter{font-family:"Special Elite",serif;color:#bde7f7;letter-spacing:.12em}
+.home-intro h2,.page-heading h2,.panel-title h3,.calendar-top h3,.selected-date h4{
+ font-family:"Pixelify Sans",sans-serif;font-weight:500;letter-spacing:0;color:#fff7fb;
+}
+.home-intro h2{font-size:clamp(39px,5.8vw,66px);text-shadow:0 0 28px rgba(189,231,247,.16)}
+.home-intro p,.page-heading p{color:#b5c0d3}
+.profiles{gap:20px}
+.profile-card{border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.22)}
+.noor{background:linear-gradient(145deg,#bde7f7,#d9f1fa 72%,#fff7fb);border-color:#d4f2fb;color:#24334f}
+.safa{background:linear-gradient(145deg,#f3cde0,#f9dfeb 72%,#fff7fb);border-color:#f8dfec;color:#51384d}
+.profile-top{color:#3d6078}
+.profile-mark{border-color:rgba(36,51,79,.35);color:#24334f}
+.profile-initial{background:rgba(255,247,251,.72);border-color:rgba(36,51,79,.18);color:#24334f}
+.profile-bottom h3{font:600 37px "Pixelify Sans",sans-serif;color:#24334f;letter-spacing:.04em}
+.profile-bottom p{color:#40566e}
+.profile-line{background:#536d83;opacity:.35}
+.home-foot{color:#aebbd0;font-family:"Special Elite",serif}
+.page-heading{
+ background:linear-gradient(115deg,#222d45,#302b42);
+ border:1px solid #48546d;border-radius:14px;box-shadow:var(--shadow);
+}
+.page-heading h2{font-size:clamp(32px,4vw,44px)}
+.heading-note{color:#f3cde0}
+.panel,.calendar-panel,.dialog{
+ background:linear-gradient(145deg,#202940,#1c2335);
+ border:1px solid #46536d;border-radius:12px;color:#fff7fb;
+ box-shadow:var(--shadow);
+}
+.panel-title{border-bottom-color:#3c4962}
+.panel-title h3,.calendar-top h3,.selected-date h4{color:#fff7fb}
+.primary,.ghost{border-radius:8px;font-family:"Outfit",sans-serif}
+.primary{background:#bde7f7;color:#24334f;border:1px solid #d6f2fb}
+.primary:hover{background:#d9f1fa}
+.ghost{background:#3a3048;color:#f3cde0;border:1px solid #76516d}
+.ghost:hover{background:#49364d}
+.tag{background:#3a3048;color:#f3cde0;border:1px solid #76516d;border-radius:6px;font-family:"Special Elite",serif}
+input,textarea,select{
+ background:#151c2c;color:#fff7fb;border:1px solid #485670;border-radius:7px;
+ font-family:"Outfit",sans-serif;
+}
+input::placeholder,textarea::placeholder{color:#8291aa}
+input:focus,textarea:focus,select:focus{border-color:#bde7f7;box-shadow:0 0 0 3px rgba(189,231,247,.15)}
+label{color:#bde7f7;font-family:"Special Elite",serif;letter-spacing:.04em}
+.item{border-color:#3b4760}
+.item strong{color:#fff7fb}
+.item p,.item small,.muted{color:#b5c0d3}
+.item a{color:#bde7f7}
+.item-actions button{background:#3a3048;color:#f3cde0;border:1px solid #76516d;border-radius:6px}
+.calendar-controls button{background:#27334d;border-color:#4a5a78;color:#bde7f7;border-radius:7px}
+.weekday{color:#b7c6d9;font-family:"Special Elite",serif}
+.day{background:#182136;border-color:#394762;color:#fff7fb;border-radius:7px}
+.day.today{border-color:#bde7f7;background:#263d55}
+.day.selected{background:#3a3048;border-color:#f3cde0;color:#fff7fb}
+.event-dot{background:#bde7f7;color:#24334f;border-radius:4px}
+.photo{background:#151c2c;border-color:#46536d;border-radius:9px}
+.photo button{background:#fff7fb;color:#24334f;border-radius:6px}
+.empty,.diary-empty{color:#b9c5d8}
+.modal{background:rgba(5,8,18,.82)}
+.dialog{background:#202940;border-color:#52617c}
+.dialog h2{font:500 28px "Pixelify Sans",sans-serif;color:#fff7fb}
+footer{color:#aebbd0;border-color:#3b4760;font-family:"Special Elite",serif}
+#spotifyPlayer iframe{border-radius:9px}
+/* The diary is a blush-white keepsake against the midnight desk. */
+.diary-desk{background:linear-gradient(140deg,#202d47,#342a43);border:1px solid #4a5873;border-radius:14px}
+.diary-toolbar .tag{font-size:10px}
+.diary-book{filter:drop-shadow(0 18px 24px rgba(0,0,0,.35))}
+.diary-page{background:#fff7fb;color:#24334f;box-shadow:inset 0 0 24px rgba(36,51,79,.06)}
+.diary-page.left{border-right-color:#e7dce5;background:repeating-linear-gradient(to bottom,#fff7fb 0,#fff7fb 31px,#dceaf0 32px)}
+.diary-page.right{background:#fff7fb}
+.diary-page.left:after{background:linear-gradient(90deg,#8b829044,#fff7fb,#8b829033)}
+.diary-date{color:#8b6684;font:12px "Special Elite",serif;letter-spacing:.08em}
+.diary-page h3{font:500 clamp(23px,3vw,34px) "Pixelify Sans",sans-serif;color:#24334f}
+.diary-writing{font:15px/2 "Special Elite",serif;color:#3b4962}
+.diary-photo-frame{border-color:#e7dce5;background:#f8edf3;box-shadow:0 6px 18px rgba(36,51,79,.12)}
+.diary-photo-empty{border-color:#d9c9d7;color:#8b6684;background:#fbf1f7;font-family:"Special Elite",serif}
+.diary-page-number{color:#8b8296}
+.diary-arrow{border-color:#64738d;background:#27334d;color:#bde7f7}
+.diary-arrow:hover:not(:disabled){background:#3a3048;border-color:#f3cde0;color:#f3cde0}
+.diary-turn-sheet .turn-face{background-color:#fff7fb}
+.diary-turn-sheet .turn-face.turn-front{background:repeating-linear-gradient(to bottom,#fff7fb 0,#fff7fb 31px,#dceaf0 32px)}
+.diary-turn-sheet .turn-face.turn-back{background:#fff7fb}
+.diary-editor{border-color:#4a5873;background:linear-gradient(140deg,#202d47,#342a43)}
+.diary-editor-stage{border-color:#64738d;background:repeating-linear-gradient(45deg,#172136,#172136 12px,#252d43 12px,#252d43 24px)}
+.diary-editor-placeholder,.diary-editor-help{color:#c1ccdc}
+.diary-editor-sticker{color:#c77fa8}
+.diary-editor-sticker.selected{outline-color:#f3cde0}
+.diary-editor-tools .sticker-choice{border-color:#76516d;background:#3a3048;color:#f3cde0}
+.diary-editor-tools input[type=range]{accent-color:#f3cde0}
+
+
+/* Typography refinement: keep the typewriter character, lose the pixel display font. */
+.brand h1,.home-intro h2,.page-heading h2,.panel-title h3,
+.calendar-top h3,.selected-date h4,.profile-bottom h3,.dialog h2,
+.diary-page h3{
+  font-family:"Special Elite","Courier New",monospace !important;
+  font-weight:400 !important;letter-spacing:0 !important;text-shadow:none;
+}
+.brand h1{font-size:23px;line-height:1.15}
+.home-intro h2{font-size:clamp(38px,5.4vw,62px);line-height:1.12}
+.page-heading h2{font-size:clamp(30px,3.8vw,41px);line-height:1.15}
+.panel-title h3,.calendar-top h3,.selected-date h4{font-size:22px}
+.profile-bottom h3{font-size:35px}
+.dialog h2{font-size:27px}
+.diary-page h3{font-size:clamp(22px,2.8vw,31px)}
+</style>
+<script>
+const missingNode=new Proxy({}, {get:(t,p)=>p==='classList'?new Proxy({}, {get:()=>()=>{}}):p==='querySelector'?()=>null:p==='querySelectorAll'?()=>[]:p==='closest'?()=>null:p==='addEventListener'?()=>{}:undefined,set:()=>true});
+const $=s=>document.querySelector(s)||missingNode, $=s=>[...document.querySelectorAll(s)];
+const store={events:'ocb_events',places:'ocb_places',diary:'ocb_diary',reels:'ocb_reels',spotify:'ocb_spotify',photos:'ocb_photos'};
+const get=k=>{try{return JSON.parse(localStorage.getItem(store[k])||'[]')}catch(e){return[]}},put=(k,v)=>localStorage.setItem(store[k],JSON.stringify(v));
+function go(page){$$('.page').forEach(x=>x.classList.toggle('active',x.id===page));$$('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===page));if(page==='calendar')renderCalendar();window.scrollTo({top:0,behavior:'smooth'})}
+$$('[data-page]').forEach(b=>b.onclick=()=>go(b.dataset.page));
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+let currentType='',editingDiaryId=null,diaryIndex=0,selectedDate=new Date().toISOString().slice(0,10),viewMonth=new Date();
+const configs={
+event:{title:'Add a calendar event',fields:[['title','Event name','text'],['date','Date','date'],['time','Time (optional)','time'],['description','Details','textarea']]},
+place:{title:'Add a place to visit',fields:[['title','Place name','text'],['location','Area / address / link','text'],['description','Why do we want to go?','textarea']]},
+diary:{title:'Write a diary entry',fields:[['title','Entry title','text'],['date','Date','date'],['description','Write your entry...','textarea'],['image','Add a picture (optional)','file'] ]},
+reel:{title:'Save a reel to recreate',fields:[['title','Reel / idea name','text'],['url','Instagram / TikTok link','url'],['description','Notes / who does what','textarea']]}
+};
+function openForm(type,id=null){
+ currentType=type;editingDiaryId=id;
+ const c=configs[type],existing=id?get(type).find(x=>x.id===id):null;
+ $('#modalTitle').textContent=existing?'Edit diary entry':c.title;
+ if(type==='diary'){
+  $('#fields').innerHTML=
+   '<div class="formrow"><label>Entry title</label><input name="title" type="text" value="'+esc(existing?.title||'')+'" required></div>'+
+   '<div class="formrow"><label>Date</label><input name="date" type="date" value="'+esc(existing?.date||'')+'"></div>'+
+   '<div class="formrow"><label>Your diary entry</label><textarea name="description" placeholder="Write your memory...">'+esc(existing?.description||'')+'</textarea></div>'+
+   '<div class="diary-editor"><div class="formrow"><label>Upload a picture</label><input id="diaryImageInput" name="image" type="file" accept="image/*"><p class="diary-editor-help">Drag your picture to position it, adjust its size and add stickers.</p></div>'+
+   '<div class="diary-editor-stage" id="diaryEditorStage">'+
+    (existing?.image?'<img data-art-kind="photo" alt="Photo being arranged" src="'+existing.image+'">':'<div class="diary-editor-placeholder">Your picture will appear here</div>')+
+    '</div>'+
+   '<div class="diary-editor-tools"><label for="diaryPhotoSize" style="margin:0">Photo size</label><input id="diaryPhotoSize" type="range" min="20" max="100" step="1" value="'+(existing?.art?.w||80)+'"><span id="diaryPhotoSizeValue">'+(existing?.art?.w||80)+'%</span></div>'+
+   '<div class="diary-editor-tools" style="margin-top:12px"><span class="diary-editor-help" style="margin:0">Add a sticker</span>'+
+    ['♡','☆','✦','✿','☁','♥','☀','✧'].map(ch=>'<button type="button" class="sticker-choice" data-sticker="'+ch+'">'+ch+'</button>').join('')+
+    '<button type="button" class="ghost" id="removeSticker">Remove selected</button></div></div>';
+  setupDiaryEditor(existing);
+ }else{
+  $('#fields').innerHTML=c.fields.map(([n,l,t])=>{
+   const value=existing&&existing[n]&&t!=='file'?existing[n]:'';
+   return '<div class="formrow"><label>'+l+'</label>'+
+    (t==='textarea'?'<textarea name="'+n+'">'+esc(value)+'</textarea>':'<input name="'+n+'" type="'+t+'" value="'+esc(value||(n==='date'&&type==='event'?selectedDate:''))+'" '+(n==='title'?'required':'')+'>')+
+    '</div>';
+  }).join('');
+ }
+ $('#modal').classList.add('open');
+}
+$$('[data-add]').forEach(b=>b.onclick=()=>openForm(b.dataset.add));$('#addCalendarEvent').onclick=()=>openForm('event');$('#cancel').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('open')};
+$('#entryForm').onsubmit=async e=>{
+ e.preventDefault();
+ const form=e.target,fd=new FormData(form),obj={};
+ for(const [k,v] of fd.entries()){
+  if(k==='image'){if(v&&v.size)obj.image=await fileData(v)}
+  else obj[k]=v;
+ }
+ const a=get(currentType);
+ if(currentType==='diary'){
+  obj.art=readDiaryEditor();
+  if(editingDiaryId){
+   const index=a.findIndex(x=>x.id===editingDiaryId);
+   if(index>=0)a[index]={...a[index],...obj,image:obj.image||a[index].image};
+  }else a.unshift({...obj,id:Date.now()});
+ }else if(editingDiaryId){
+  const index=a.findIndex(x=>x.id===editingDiaryId);
+  if(index>=0)a[index]={...a[index],...obj};
+ }else a.unshift({...obj,id:Date.now()});
+ put(currentType,a);
+ editingDiaryId=null;
+ $('#modal').classList.remove('open');
+ form.reset();
+ renderAll();
+};
+function fileData(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
+function list(k,target,empty,kind){const a=get(k);$(target).innerHTML=a.length?a.map(x=>'<div class="item"><div class="item-main"><strong>'+esc(x.title)+'</strong><small>'+esc(kind==='places'?(x.location||''):kind==='reels'?(x.url?'Saved link':''):((x.date||'')+(x.time?' · '+x.time:'')))+'</small>'+(x.description?'<p>'+esc(x.description)+'</p>':'')+(x.url?'<p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open saved reel ↗</a></p>':'')+'</div><div class="item-actions"><button data-delete="'+k+'" data-id="'+x.id+'">Remove</button></div></div>').join(''):'<div class="empty">'+empty+'</div>'}
+function renderDiary(){const a=get('diary');if(diaryIndex>=a.length)diaryIndex=Math.max(0,a.length-1);const spread=$('#diarySpread');if(!a.length){$('#diaryCounter').textContent='OUR JOURNAL';$('#diaryPageCount').textContent='NO PAGES YET';spread.innerHTML='<div class="diary-empty" style="grid-column:1/-1">Our journal is still blank.<br>Start with a little memory, a date and a picture.</div>';$('#diaryPrev').disabled=true;$('#diaryNext').disabled=true;$('#diaryActions').innerHTML='';return}const x=a[diaryIndex],page=diaryIndex*2+1;$('#diaryCounter').textContent='ENTRY '+String(diaryIndex+1).padStart(2,'0')+' · '+a.length+' MEMORIES';$('#diaryPageCount').textContent='PAGES '+page+'–'+(page+1)+' OF '+(a.length*2);$('#diaryPrev').disabled=diaryIndex===0;$('#diaryNext').disabled=diaryIndex===a.length-1;spread.innerHTML='<div class="diary-page left"><div class="diary-date">'+esc(x.date||'A NOTE TO REMEMBER')+'</div><h3>'+esc(x.title)+'</h3><div class="diary-writing">'+esc(x.description||'This page is yours. Add a few words about this memory.')+'</div><span class="diary-page-number">'+page+'</span></div><div class="diary-page right">'+(x.image?'<div class="diary-photo-frame">'+diaryArtMarkup(x)+'</div>':'<div class="diary-photo-empty">A space for a photograph<br><small>Add one when editing this entry</small></div>')+'<span class="diary-page-number">'+(page+1)+'</span></div>';$('#diaryActions').innerHTML='<button class="ghost" id="editDiary">Edit this entry</button><button class="ghost" id="deleteDiary">Remove entry</button>';$('#editDiary').onclick=()=>openForm('diary',x.id);$('#deleteDiary').onclick=()=>{if(confirm('Remove this diary entry?')){put('diary',get('diary').filter(e=>e.id!==x.id));diaryIndex=Math.max(0,diaryIndex-1);renderAll()}}}
+function renderCalendar(){const y=viewMonth.getFullYear(),m=viewMonth.getMonth(),first=new Date(y,m,1),start=new Date(y,m,1-first.getDay()),today=new Date(),fmt=new Intl.DateTimeFormat('en',{month:'long',year:'numeric'});$('#monthLabel').textContent=fmt.format(first);$('#calendarGrid').innerHTML=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d=>'<div class="weekday">'+d+'</div>').join('');const events=get('events');for(let i=0;i<42;i++){const d=new Date(start);d.setDate(start.getDate()+i);const key=localDate(d),same=events.filter(e=>e.date===key);const b=document.createElement('button');b.className='day'+(d.getMonth()!==m?' outside':'')+(key===localDate(today)?' today':'')+(key===selectedDate?' selected':'');b.innerHTML='<span class="day-number">'+d.getDate()+'</span>'+same.slice(0,2).map(e=>'<span class="event-dot">'+esc(e.title)+'</span>').join('')+(same.length>2?'<span class="event-dot">+'+(same.length-2)+' more</span>':'');b.onclick=()=>{selectedDate=key;renderCalendar()};$('#calendarGrid').appendChild(b)}const sd=new Date(selectedDate+'T12:00:00');$('#selectedLabel').textContent=sd.toLocaleDateString('en',{weekday:'long',month:'long',day:'numeric',year:'numeric'});const todays=events.filter(e=>e.date===selectedDate);$('#dayEvents').innerHTML=todays.length?todays.map(e=>'<div class="item"><div class="item-main"><strong>'+esc(e.title)+'</strong><small>'+esc(e.time||'')+'</small>'+(e.description?'<p>'+esc(e.description)+'</p>':'')+'</div><div class="item-actions"><button data-delete="events" data-id="'+e.id+'">Remove</button></div></div>').join(''):'<div class="empty" style="padding:22px">Nothing planned for this day yet.</div>'}
+function localDate(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+$('#prevMonth').onclick=()=>{viewMonth.setMonth(viewMonth.getMonth()-1);renderCalendar()};$('#nextMonth').onclick=()=>{viewMonth.setMonth(viewMonth.getMonth()+1);renderCalendar()};$('#todayMonth').onclick=()=>{viewMonth=new Date();selectedDate=localDate(new Date());renderCalendar()};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-delete]');if(b){const k=b.dataset.delete;put(k,get(k).filter(x=>x.id!=b.dataset.id));renderAll()}});
+function renderSpotify(){const a=get('spotify'),first=a[0];let embed='';if(first){try{const u=new URL(first.url);if(u.hostname.endsWith('spotify.com')){const p=u.pathname.split('/').filter(Boolean);if(p.length>=2&&p[0]!=='embed')embed='https://open.spotify.com/embed/'+p.slice(0,2).join('/')+'?utm_source=generator&theme=0'}}catch(e){}}$('#spotifyPlayer').innerHTML=embed?'<iframe title="Spotify player" src="'+esc(embed)+'" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>':'';$('#spotifyList').innerHTML=a.length?a.map(x=>'<div class="item"><div class="item-main"><strong>'+esc(x.name||'Our shared soundtrack')+'</strong><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open in Spotify ↗</a></p></div><div class="item-actions"><button data-spdel="'+x.id+'">Remove</button></div></div>').join(''):'<div class="empty">Our shared soundtrack starts here.</div>'}
+$('#saveSpotify').onclick=()=>{const url=$('#spotifyUrl').value.trim();if(!/^https?:\/\/(open\.)?spotify\.com\//i.test(url)){alert('Please paste a valid Spotify link.');return}const a=get('spotify');a.unshift({id:Date.now(),url,name:$('#spotifyName').value.trim()});put('spotify',a);$('#spotifyUrl').value='';$('#spotifyName').value='';renderSpotify()};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-spdel]');if(b){put('spotify',get('spotify').filter(x=>x.id!=b.dataset.spdel));renderSpotify()}});
+$('#photoBtn').onclick=()=>$('#photoInput').click();$('#photoInput').onchange=async e=>{const a=get('photos');for(const f of e.target.files){if(f.type.startsWith('image/'))a.unshift({id:Date.now()+Math.random(),name:f.name,data:await fileData(f)})}put('photos',a);e.target.value='';renderPhotos()};
+function renderPhotos(){const a=get('photos');$('#photos').innerHTML=a.length?a.map(x=>'<div class="photo"><img src="'+x.data+'" alt="'+esc(x.name)+'"><button data-phdel="'+x.id+'" aria-label="Remove photo">×</button></div>').join(''):'<div class="empty" style="grid-column:1/-1">No snapshots yet. Add the first one to our wall.</div>'}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-phdel]');if(b){put('photos',get('photos').filter(x=>x.id!=b.dataset.phdel));renderPhotos()}});
+function renderAll(){renderDiary();list('places','#placesList','Our list of places is waiting.','places');list('reels','#reelsList','Save a reel or trend you want to try together.','reels');renderDiary();renderPhotos();renderSpotify();renderCalendar()}
+
+// Diary photo editor: drag photos and stickers, resize photos, and save the layout with the entry.
+let editorArt={x:10,y:10,w:80,stickers:[]},selectedSticker=-1;
+function setupDiaryEditor(existing){
+ editorArt={x:existing?.art?.x??10,y:existing?.art?.y??10,w:existing?.art?.w??80,stickers:(existing?.art?.stickers||[]).map(s=>({...s}))};
+ selectedSticker=-1;
+ const stage=$('#diaryEditorStage'),input=$('#diaryImageInput');
+ input.onchange=async()=>{
+  const file=input.files?.[0];if(!file)return;
+  const src=await fileData(file);
+  let img=stage.querySelector('img[data-art-kind="photo"]');
+  if(!img){img=document.createElement('img');img.dataset.artKind='photo';img.alt='Photo being arranged';stage.querySelector('.diary-editor-placeholder')?.remove();stage.prepend(img)}
+  img.src=src;editorArt.x=10;editorArt.y=10;editorArt.w=80;
+  $('#diaryPhotoSize').value=80;$('#diaryPhotoSizeValue').textContent='80%';
+  drawDiaryEditorImage();
+ };
+ $('#diaryPhotoSize').oninput=e=>{editorArt.w=Number(e.target.value);$('#diaryPhotoSizeValue').textContent=editorArt.w+'%';drawDiaryEditorImage()};
+ $$('[data-sticker]').forEach(btn=>btn.onclick=()=>{
+  editorArt.stickers.push({char:btn.dataset.sticker,x:50,y:50,size:34});
+  selectedSticker=editorArt.stickers.length-1;drawDiaryEditorStickers();
+ });
+ $('#removeSticker').onclick=()=>{
+  if(selectedSticker>=0){editorArt.stickers.splice(selectedSticker,1);selectedSticker=-1;drawDiaryEditorStickers()}
+ };
+ stage.onpointerdown=e=>{
+  const target=e.target.closest('img[data-art-kind="photo"],.diary-editor-sticker');
+  if(!target)return;
+  const isPhoto=target.dataset.artKind==='photo',index=Number(target.dataset.index);
+  if(!isPhoto)selectedSticker=index;
+  const rect=stage.getBoundingClientRect(),startX=e.clientX,startY=e.clientY;
+  const base=isPhoto?{x:editorArt.x,y:editorArt.y}:{x:editorArt.stickers[index].x,y:editorArt.stickers[index].y};
+  target.setPointerCapture(e.pointerId);
+  const move=ev=>{
+   const dx=(ev.clientX-startX)/rect.width*100,dy=(ev.clientY-startY)/rect.height*100;
+   if(isPhoto){
+    editorArt.x=Math.max(-editorArt.w+5,Math.min(95,base.x+dx));
+    editorArt.y=Math.max(-80,Math.min(95,base.y+dy));
+    target.style.left=editorArt.x+'%';target.style.top=editorArt.y+'%';
+   }else{
+    editorArt.stickers[index].x=Math.max(0,Math.min(100,base.x+dx));
+    editorArt.stickers[index].y=Math.max(0,Math.min(100,base.y+dy));
+    target.style.left=editorArt.stickers[index].x+'%';target.style.top=editorArt.stickers[index].y+'%';
+   }
+  };
+  const stop=()=>{target.removeEventListener('pointermove',move);target.removeEventListener('pointerup',stop);target.removeEventListener('pointercancel',stop)};
+  target.addEventListener('pointermove',move);
+  target.addEventListener('pointerup',stop,{once:true});
+  target.addEventListener('pointercancel',stop,{once:true});
+ };
+ drawDiaryEditorImage();drawDiaryEditorStickers();
+}
+function drawDiaryEditorImage(){
+ const img=$('#diaryEditorStage img[data-art-kind="photo"]');if(!img)return;
+ img.style.left=editorArt.x+'%';img.style.top=editorArt.y+'%';img.style.width=editorArt.w+'%';img.style.height='auto';
+}
+function drawDiaryEditorStickers(){
+ const stage=$('#diaryEditorStage');if(!stage)return;
+ stage.querySelectorAll('.diary-editor-sticker').forEach(el=>el.remove());
+ editorArt.stickers.forEach((sticker,index)=>{
+  const el=document.createElement('span');el.className='diary-editor-sticker'+(selectedSticker===index?' selected':'');
+  el.dataset.index=index;el.textContent=sticker.char;
+  el.style.left=sticker.x+'%';el.style.top=sticker.y+'%';el.style.fontSize=sticker.size+'px';
+  stage.append(el);
+ });
+}
+function readDiaryEditor(){return{...editorArt,stickers:editorArt.stickers.map(s=>({...s}))}}
+function diaryArtMarkup(entry){
+ if(!entry.image)return '';
+ const art=entry.art||{x:10,y:10,w:80,stickers:[]};
+ return '<div class="diary-photo-art"><img src="'+entry.image+'" alt="Photo for '+esc(entry.title)+'" style="left:'+Number(art.x??10)+'%;top:'+Number(art.y??10)+'%;width:'+Number(art.w||80)+'%">'+
+  (art.stickers||[]).map(s=>'<span class="art-sticker" style="left:'+Number(s.x)+'%;top:'+Number(s.y)+'%;font-size:'+Number(s.size||34)+'px;color:#6b9ab5">'+esc(s.char)+'</span>').join('')+
+  '</div>';
+}
+function diaryPageMarkup(entry,side,pageNo){
+ if(side==='left')return '<div class="diary-date">'+esc(entry.date||'A NOTE TO REMEMBER')+'</div><h3>'+esc(entry.title)+'</h3><div class="diary-writing">'+esc(entry.description||'This page is yours. Add a few words about this memory.')+'</div><span class="diary-page-number">'+pageNo+'</span>';
+ return (entry.image?'<div class="diary-photo-frame">'+diaryArtMarkup(entry)+'</div>':'<div class="diary-photo-empty">A space for a photograph<br><small>Add one when editing this entry</small></div>')+'<span class="diary-page-number">'+pageNo+'</span>';
+}
+function flipDiary(direction){
+ const entries=get('diary');
+ // The left control always moves to the previous entry; the right control always moves to the next.
+ const step=direction==='backward'?-1:1;
+ const nextIndex=diaryIndex+step;
+ if(nextIndex<0||nextIndex>=entries.length)return;
+ const spread=$('#diarySpread');
+ if(spread.querySelector('.diary-turn-sheet'))return;
+
+ // Forward: turn the right page toward the left. Backward: turn the left page toward the right.
+ const turningSide=step===1?'right':'left';
+ const revealSide=step===1?'left':'right';
+ const frontPage=spread.querySelector('.diary-page.'+turningSide);
+ if(!frontPage)return;
+
+ const sheet=document.createElement('div');
+ sheet.className='diary-turn-sheet '+(step===1?'turn-forward':'turn-backward');
+ const front=frontPage.innerHTML;
+ const revealedPageNumber=step===1?nextIndex*2+1:nextIndex*2+2;
+ const back=diaryPageMarkup(entries[nextIndex],revealSide,revealedPageNumber);
+ sheet.innerHTML='<div class="turn-face turn-front">'+front+'</div><div class="turn-face turn-back">'+back+'</div>';
+ spread.appendChild(sheet);
+ sheet.addEventListener('animationend',event=>{
+  if(event.target!==sheet)return;
+  diaryIndex=nextIndex;
+  renderDiary();
+ },{once:true});
+}
+$('#diaryPrev').onclick=()=>flipDiary('backward');$('#diaryNext').onclick=()=>flipDiary('forward');
+const currentPage=document.querySelector('main .page')?.id;
+if(currentPage==='calendar')renderCalendar();
+if(currentPage==='diary')renderDiary();
+if(currentPage==='photobooth')renderPhotos();
+if(currentPage==='music')renderSpotify();
+if(currentPage==='places')list('places','#placesList','Our list of places is waiting.','places');
+if(currentPage==='reels')list('reels','#reelsList','Save a reel or trend you want to try together.','reels');
+</script>
+</body></html>
