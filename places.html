@@ -9,8 +9,8 @@
 
 </head>
 <body><div class="shell"><header><div class="brand"><div class="logo" aria-hidden="true"></div><div><h1>our cozy bubble</h1><small>a little place for the two of us</small></div></div>
-<nav id="nav"><a class="nav" href="./index.html">Home</a><a class="nav" href="./calendar.html">Calendar</a><a class="nav" href="./photobooth.html">Photobooth</a><a class="nav" href="./gifts.html">Gifts</a><a class="nav" href="./music.html">Music</a><a class="nav" href="./diary.html">Diary</a><a class="nav active" href="./places.html">Places to Visit</a><a class="nav" href="./reels.html">Reels to Recreate</a></nav></header><main><section class="page active" id="places"><div class="page-heading"><div><div class="eyebrow">SOMEWHERE TO GO TOGETHER</div><h2>Places to Visit</h2><p>All the places we want to explore, one day at a time.</p></div><button class="primary" data-add="place">＋ Add a place</button></div><div class="panel"><div id="placesList"></div></div></section></main><footer>OUR COZY BUBBLE · NOOR & SAFA</footer></div>
-<div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">Add something</h2><form id="entryForm"><div id="fields"></div><div class="dialog-actions"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary" type="submit">Save entry</button></div></form></div></div>
+<nav id="nav"><a class="nav" href="./index.html">Home</a><a class="nav" href="./calendar.html">Calendar</a><a class="nav" href="./photobooth.html">Photobooth</a><a class="nav" href="./gifts.html">Gifts</a><a class="nav" href="./music.html">Music</a><a class="nav" href="./diary.html">Diary</a><a class="nav active" href="./places.html">Places to Visit</a><a class="nav" href="./reels.html">Reels to Recreate</a></nav><button class="auth-exit is-hidden" id="signOutBtn" type="button">Lock</button></header><main><section class="page active" id="places"><div class="page-heading"><div><div class="eyebrow">SOMEWHERE TO GO TOGETHER</div><h2>Places to Visit</h2><p>All the places we want to explore, one day at a time.</p></div><button class="primary" data-add="place">＋ Add a place</button></div><div class="panel"><div id="placesList"></div></div></section></main><footer>OUR COZY BUBBLE · NOOR & SAFA</footer></div>
+<div class="login-overlay" id="loginOverlay"><form class="login-card" id="loginForm"><div class="login-kicker">A PRIVATE LITTLE WORLD</div><h2>Welcome back.</h2><p>Our cozy bubble is just for Noor & Safa. Enter your shared password to step inside.</p><label for="loginPassword">Shared password</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required><button class="primary" type="submit">Enter our bubble</button><div class="login-error" id="loginError" role="status"></div></form></div><div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">Add something</h2><form id="entryForm"><div id="fields"></div><div class="dialog-actions"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary" type="submit">Save entry</button></div></form></div></div>
 <style>
 :root{--ink:#17384d;--muted:#7894a8;--blue:#b9e2f6;--blue2:#dff2fc;--pale:#f4faff;--line:#d7eaf5;--white:#fff;--shadow:0 18px 48px rgba(53,111,145,.09)}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 8% 0%,#d8effc 0,transparent 34%),radial-gradient(ellipse at 100% 38%,#e5f4fc 0,transparent 32%),#f8fcff;font:14px/1.55 "Avenir Next",Avenir,system-ui,sans-serif;min-height:100vh}
@@ -604,12 +604,78 @@ footer,.home-foot{color:#a88ba9 !important;border-color:#eaddeb !important}
 .diary-editor-sticker{color:#987cac !important}
 .diary-editor-sticker.selected{outline-color:#c6addd !important}
 
+.login-overlay{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:rgba(243,249,253,.97);backdrop-filter:blur(16px)}.login-overlay.is-hidden{display:none}.login-card{width:min(420px,100%);padding:36px;background:#fff;border:1px solid #d7eaf5;border-radius:8px;box-shadow:0 24px 80px rgba(53,111,145,.16)}.login-kicker{font-size:9px;letter-spacing:.23em;color:#79a0b6;font-weight:700}.login-card h2{font:38px Georgia,serif;color:#244a62;margin:12px 0}.login-card p{font-size:12px;color:#7894a8;line-height:1.7;margin:0 0 24px}.login-card .primary{width:100%;margin-top:14px}.login-error{min-height:20px;margin-top:10px;color:#a65f76;font-size:11px}.auth-exit{border:1px solid #dceef7;background:#eff8fd;color:#63869b;border-radius:4px;padding:8px 11px;font-size:10px;letter-spacing:.04em;white-space:nowrap}.is-hidden{display:none!important}.profile-photo-control{position:relative;overflow:hidden;cursor:pointer}.profile-photo-control.has-photo{background-size:cover;background-position:center;background-repeat:no-repeat}.profile-photo-control.has-photo>span{opacity:0}.profile-photo-control input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;padding:0}@media(max-width:760px){.login-card{padding:28px}}
 </style>
-<script>
+<script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+import { getStorage, ref, uploadString, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js";
+const firebaseConfig = {
+ apiKey:"AIzaSyAiqB60KNMSSzj6MCiw_B0rtNDtjJC8hJU",
+ authDomain:"our-cozy-bubble.firebaseapp.com",
+ projectId:"our-cozy-bubble",
+ storageBucket:"our-cozy-bubble.firebasestorage.app",
+ messagingSenderId:"1038767748204",
+ appId:"1:1038767748204:web:083dccd25f39a7193a9449"
+};
+const firebaseApp=initializeApp(firebaseConfig),auth=getAuth(firebaseApp),db=getFirestore(firebaseApp),storage=getStorage(firebaseApp);
+const allowedUid="VreXuUnkueVG0JcvDdCZjr1LYsi1",sharedEmail="heyits.noor@icloud.com";
+let cloudReady=false,cloudUnsubs=[],migrationInProgress=new Set();
+
 const missingNode=new Proxy({}, {get:(t,p)=>p==='classList'?new Proxy({}, {get:()=>()=>{}}):p==='querySelector'?()=>null:p==='querySelectorAll'?()=>[]:p==='closest'?()=>null:p==='addEventListener'?()=>{}:undefined,set:()=>true});
 const $=s=>document.querySelector(s)||missingNode; const all=s=>[...document.querySelectorAll(s)];
-const store={events:'ocb_events',places:'ocb_places',diary:'ocb_diary',reels:'ocb_reels',spotify:'ocb_spotify',photos:'ocb_photos'};
-const get=k=>{try{return JSON.parse(localStorage.getItem(store[k])||'[]')}catch(e){return[]}},put=(k,v)=>localStorage.setItem(store[k],JSON.stringify(v));
+const store={events:'ocb_events',places:'ocb_places',diary:'ocb_diary',reels:'ocb_reels',spotify:'ocb_spotify',photos:'ocb_photos',profiles:'ocb_profiles'};
+const sharedKeys=Object.keys(store);
+const readLocal=k=>{try{return JSON.parse(localStorage.getItem(store[k])||'[]')}catch(e){return[]}};
+const sharedCache=Object.fromEntries(sharedKeys.map(k=>[k,readLocal(k)]));
+const get=k=>sharedCache[k]||[];
+function put(k,v){
+ sharedCache[k]=v;
+ try{localStorage.setItem(store[k],JSON.stringify(v))}catch(e){}
+ if(cloudReady)setDoc(doc(db,'shared',k),{items:v,updatedAt:serverTimestamp()}).catch(error=>console.error('Cloud save failed:',error));
+}
+async function migrateLegacy(k,items){
+ if(migrationInProgress.has(k))return;
+ migrationInProgress.add(k);
+ try{
+  const migrated=[];
+  for(const item of items){
+   const copy={...item};
+   if(k==='diary'&&typeof copy.image==='string'&&copy.image.startsWith('data:'))copy.image=await uploadDataUrl(copy.image,'diary/legacy-'+copy.id+'.jpg');
+   if(k==='photos'&&typeof copy.data==='string'&&copy.data.startsWith('data:'))copy.data=await uploadDataUrl(copy.data,'photobooth/legacy-'+safeFileName(copy.name));
+   if(k==='profiles'&&typeof copy.image==='string'&&copy.image.startsWith('data:'))copy.image=await uploadDataUrl(copy.image,'profiles/legacy-'+copy.id+'.jpg');
+   migrated.push(copy);
+  }
+  sharedCache[k]=migrated;
+  localStorage.setItem(store[k],JSON.stringify(migrated));
+  await setDoc(doc(db,'shared',k),{items:migrated,updatedAt:serverTimestamp()});
+ }catch(error){console.error('Legacy data migration failed:',error)}
+ finally{migrationInProgress.delete(k)}
+}
+function connectSharedData(){
+ if(cloudReady)return;
+ cloudReady=true;
+ cloudUnsubs=sharedKeys.map(k=>onSnapshot(doc(db,'shared',k),snap=>{
+  if(snap.exists()){
+   const items=snap.data().items;
+   sharedCache[k]=Array.isArray(items)?items:[];
+   try{localStorage.setItem(store[k],JSON.stringify(sharedCache[k]))}catch(e){}
+  }else{
+   const legacy=readLocal(k);
+   sharedCache[k]=legacy;
+   if(legacy.length)migrateLegacy(k,legacy);
+  }
+  if(typeof renderAll==='function')renderAll();
+  if(typeof renderProfiles==='function')renderProfiles();
+ },error=>console.error('Cloud sync failed:',error)));
+}
+function disconnectSharedData(){cloudUnsubs.forEach(unsub=>unsub());cloudUnsubs=[];cloudReady=false}
+async function uploadDataUrl(dataUrl,path){
+ const fileRef=ref(storage,path);
+ await uploadString(fileRef,dataUrl,'data_url');
+ return await getDownloadURL(fileRef);
+}
+function safeFileName(name){return String(name||'image').replace(/[^a-z0-9._-]/gi,'_').slice(0,80)}
 function go(page){all('.page').forEach(x=>x.classList.toggle('active',x.id===page));all('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===page));if(page==='calendar')renderCalendar();window.scrollTo({top:0,behavior:'smooth'})}
 all('[data-page]').forEach(b=>b.onclick=()=>go(b.dataset.page));
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
@@ -656,6 +722,7 @@ $('#entryForm').onsubmit=async e=>{
   if(k==='image'){if(v&&v.size)obj.image=await fileData(v)}
   else obj[k]=v;
  }
+ if(currentType==='diary'&&obj.image&&obj.image.startsWith('data:'))obj.image=await uploadDataUrl(obj.image,'diary/'+Date.now()+'-'+safeFileName('memory.jpg'));
  const a=get(currentType);
  if(currentType==='diary'){
   obj.art=readDiaryEditor();
@@ -683,7 +750,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-delete]');
 function renderSpotify(){const a=get('spotify'),first=a[0];let embed='';if(first){try{const u=new URL(first.url);if(u.hostname.endsWith('spotify.com')){const p=u.pathname.split('/').filter(Boolean);if(p.length>=2&&p[0]!=='embed')embed='https://open.spotify.com/embed/'+p.slice(0,2).join('/')+'?utm_source=generator&theme=0'}}catch(e){}}$('#spotifyPlayer').innerHTML=embed?'<iframe title="Spotify player" src="'+esc(embed)+'" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>':'';$('#spotifyList').innerHTML=a.length?a.map(x=>'<div class="item"><div class="item-main"><strong>'+esc(x.name||'Our shared soundtrack')+'</strong><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener">Open in Spotify ↗</a></p></div><div class="item-actions"><button data-spdel="'+x.id+'">Remove</button></div></div>').join(''):'<div class="empty">Our shared soundtrack starts here.</div>'}
 $('#saveSpotify').onclick=()=>{const url=$('#spotifyUrl').value.trim();if(!/^https?:\/\/(open\.)?spotify\.com\//i.test(url)){alert('Please paste a valid Spotify link.');return}const a=get('spotify');a.unshift({id:Date.now(),url,name:$('#spotifyName').value.trim()});put('spotify',a);$('#spotifyUrl').value='';$('#spotifyName').value='';renderSpotify()};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-spdel]');if(b){put('spotify',get('spotify').filter(x=>x.id!=b.dataset.spdel));renderSpotify()}});
-$('#photoBtn').onclick=()=>$('#photoInput').click();$('#photoInput').onchange=async e=>{const a=get('photos');for(const f of e.target.files){if(f.type.startsWith('image/'))a.unshift({id:Date.now()+Math.random(),name:f.name,data:await fileData(f)})}put('photos',a);e.target.value='';renderPhotos()};
+$('#photoBtn').onclick=()=>$('#photoInput').click();$('#photoInput').onchange=async e=>{const a=get('photos');for(const f of e.target.files){if(f.type.startsWith('image/')){const id=Date.now()+Math.random();const data=await uploadDataUrl(await fileData(f),'photobooth/'+id+'-'+safeFileName(f.name));a.unshift({id,name:f.name,data})}}put('photos',a);e.target.value='';renderPhotos()};
 function renderPhotos(){const a=get('photos');$('#photos').innerHTML=a.length?a.map(x=>'<div class="photo"><img src="'+x.data+'" alt="'+esc(x.name)+'"><button data-phdel="'+x.id+'" aria-label="Remove photo">×</button></div>').join(''):'<div class="empty" style="grid-column:1/-1">No snapshots yet. Add the first one to our wall.</div>'}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-phdel]');if(b){put('photos',get('photos').filter(x=>x.id!=b.dataset.phdel));renderPhotos()}});
 function renderAll(){const page=document.querySelector('main .page')?.id;if(page==='calendar')renderCalendar();if(page==='diary')renderDiary();if(page==='photobooth')renderPhotos();if(page==='music')renderSpotify();if(page==='places')list('places','#placesList','Our list of places is waiting.','places');if(page==='reels')list('reels','#reelsList','Save a reel or trend you want to try together.','reels')}
@@ -800,5 +867,33 @@ if(currentPage==='photobooth')renderPhotos();
 if(currentPage==='music')renderSpotify();
 if(currentPage==='places')list('places','#placesList','Our list of places is waiting.','places');
 if(currentPage==='reels')list('reels','#reelsList','Save a reel or trend you want to try together.','reels');
+
+function renderProfiles(){
+ const photos=Object.fromEntries(get('profiles').map(x=>[x.id,x.image]));
+ all('[data-profile]').forEach(el=>{const url=photos[el.dataset.profile];el.style.backgroundImage=url?'url("'+String(url).replace(/["\\]/g,'')+'")':'';el.classList.toggle('has-photo',!!url)});
+}
+all('[data-profile-upload]').forEach(input=>input.addEventListener('change',async e=>{
+ const file=e.target.files?.[0],profile=e.target.dataset.profileUpload;
+ if(!file||!file.type.startsWith('image/'))return;
+ try{
+  const url=await uploadDataUrl(await fileData(file),'profiles/'+profile+'-'+Date.now()+'-'+safeFileName(file.name));
+  const items=get('profiles').filter(x=>x.id!==profile);items.push({id:profile,image:url});put('profiles',items);renderProfiles();
+ }catch(error){alert('The photo could not be uploaded. Please check Firebase Storage rules and try again.');console.error(error)}
+ e.target.value='';
+}));
+renderProfiles();
+const loginForm=document.getElementById('loginForm'),loginOverlay=document.getElementById('loginOverlay'),loginError=document.getElementById('loginError'),signOutBtn=document.getElementById('signOutBtn');
+loginForm?.addEventListener('submit',async e=>{
+ e.preventDefault();const password=document.getElementById('loginPassword').value,submit=loginForm.querySelector('button[type="submit"]');
+ submit.disabled=true;loginError.textContent='Signing in…';
+ try{await signInWithEmailAndPassword(auth,sharedEmail,password);document.getElementById('loginPassword').value='';loginError.textContent=''}
+ catch(error){loginError.textContent=error.code==='auth/invalid-credential'?'That password doesn’t match. Please try again.':'Unable to sign in right now. Please check the password and try again.';console.error('Sign-in failed:',error)}
+ finally{submit.disabled=false}
+});
+signOutBtn?.addEventListener('click',()=>signOut(auth));
+onAuthStateChanged(auth,user=>{
+ if(user&&user.uid===allowedUid){loginOverlay?.classList.add('is-hidden');signOutBtn?.classList.remove('is-hidden');connectSharedData()}
+ else{disconnectSharedData();loginOverlay?.classList.remove('is-hidden');signOutBtn?.classList.add('is-hidden');if(user)signOut(auth)}
+});
 </script>
 </body></html>
