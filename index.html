@@ -536,6 +536,29 @@ input:focus,textarea:focus,select:focus{border-color:#b79bd5 !important;box-shad
 .diary-photo-frame,.diary-photo-empty{border-color:#e9dff0 !important}
 #spotifyPlayer{border:1px solid #e3d5f0 !important}
 
+
+/* Soft periwinkle accents to balance the pink and lavender palette. */
+:root{--blue:#c8d5f0 !important;--blue2:#e9eef9 !important}
+.nav:hover{background:#e8edf9 !important;color:#65577f !important}
+.profile-mark{border-color:#c2cce8 !important}
+.profile-initial{background:#f8f5ff90 !important}
+input,textarea,select{border-color:#d7dced !important}
+input:focus,textarea:focus,select:focus{border-color:#aebce0 !important;box-shadow:0 0 0 3px #edf0fa !important}
+.calendar-controls button{background:#f0f3fb !important;border-color:#d7dced !important;color:#6e7196 !important}
+.day.today{border-color:#aebce0 !important;background:#f3f5fc !important}
+.day.selected{background:#e7ebf8 !important;border-color:#aebce0 !important;box-shadow:inset 0 0 0 1px #d1d9f0 !important}
+.event-dot,.tag{background:#e8edf9 !important;color:#6f739b !important}
+.photo{background:#f0f3fb !important;border-color:#d7dced !important}
+.diary-page.left{background:repeating-linear-gradient(to bottom,#fffefa 0,#fffefa 31px,#e8edf4 32px) !important}
+.diary-page.left:after{background:linear-gradient(90deg,#c8cfe04a,#fffefa,#c8cfe033) !important}
+.diary-editor-stage{border-color:#c8d2ea !important;background:repeating-linear-gradient(45deg,#fafbff,#fafbff 12px,#edf1fa 12px,#edf1fa 24px) !important}
+.diary-arrow{border-color:#cbd4eb !important;color:#6f739b !important}
+.diary-editor-tools .sticker-choice{border-color:#d7dced !important;color:#7c78a8 !important}
+.diary-editor-tools input[type=range]{accent-color:#9daed9 !important}
+.diary-editor-sticker{color:#8582b5 !important}
+.diary-editor-sticker.selected{outline-color:#aebce0 !important}
+.item a{color:#7779a8 !important}
+
 </style>
 <script>
 const missingNode=new Proxy({}, {get:(t,p)=>p==='classList'?new Proxy({}, {get:()=>()=>{}}):p==='querySelector'?()=>null:p==='querySelectorAll'?()=>[]:p==='closest'?()=>null:p==='addEventListener'?()=>{}:undefined,set:()=>true});
