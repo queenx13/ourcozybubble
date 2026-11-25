@@ -703,7 +703,8 @@ function openForm(type,id=null){
    '<div class="diary-editor-tools" style="margin-top:12px"><span class="diary-editor-help" style="margin:0">Add a sticker</span>'+
     ['♡','☆','✦','✿','☁','♥','☀','✧'].map(ch=>'<button type="button" class="sticker-choice" data-sticker="'+ch+'">'+ch+'</button>').join('')+
     '<button type="button" class="ghost" id="removeSticker">Remove selected</button></div></div>';
-  setupDiaryEditor(existing);
+  $('#modal').classList.add('open');
+  try{setupDiaryEditor(existing)}catch(error){console.error('Diary editor setup error:',error);const help=document.createElement('p');help.className='diary-editor-help';help.textContent='The photo tools could not load, but you can still write and save your entry.';$('#fields').append(help)}
  }else{
   $('#fields').innerHTML=c.fields.map(([n,l,t])=>{
    const value=existing&&existing[n]&&t!=='file'?existing[n]:'';
@@ -714,7 +715,7 @@ function openForm(type,id=null){
  }
  $('#modal').classList.add('open');
 }
-all('[data-add]').forEach(b=>b.onclick=()=>openForm(b.dataset.add));$('#addCalendarEvent').onclick=()=>openForm('event');$('#cancel').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('open')};
+document.addEventListener('click',event=>{const addButton=event.target.closest('[data-add]');if(addButton){event.preventDefault();try{openForm(addButton.dataset.add)}catch(error){console.error('Could not open entry form:',error);$('#modal').classList.add('open')}}});$('#addCalendarEvent').onclick=()=>openForm('event');$('#cancel').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('open')};
 $('#entryForm').onsubmit=async e=>{
  e.preventDefault();
  const form=e.target,fd=new FormData(form),obj={};
