@@ -10,8 +10,8 @@
 </head>
 <body><div class="shell"><header><div class="brand"><div class="logo" aria-hidden="true"></div><div><h1>our cozy bubble</h1><small>a little place for the two of us</small></div></div>
 <nav id="nav"><a class="nav active" href="./index.html">Home</a><a class="nav" href="./calendar.html">Calendar</a><a class="nav" href="./photobooth.html">Photobooth</a><a class="nav" href="./gifts.html">Gifts</a><a class="nav" href="./music.html">Music</a><a class="nav" href="./diary.html">Diary</a><a class="nav" href="./places.html">Places to Visit</a><a class="nav" href="./reels.html">Reels to Recreate</a></nav></header><main><section class="page active" id="home"><div class="home-intro"><div class="eyebrow">A PRIVATE LITTLE WORLD</div><h2>Two people. One little world.</h2><p>A space for everything we share.</p></div>
-<div class="profiles"><article class="profile-card noor"><div class="profile-top"><span>PROFILE 01</span><span class="profile-mark">N</span></div><div class="profile-bottom"><div class="profile-initial">N</div><div><h3>NOOR</h3><p>One half of our cozy bubble.</p></div></div><div class="profile-line"></div></article>
-<article class="profile-card safa"><div class="profile-top"><span>PROFILE 02</span><span class="profile-mark">S</span></div><div class="profile-bottom"><div class="profile-initial">S</div><div><h3>SAFA</h3><p>One half of our cozy bubble.</p></div></div><div class="profile-line"></div></article></div><div class="home-foot"><span>NOOR & SAFA</span><span>EST. OUR LITTLE WORLD</span></div></section></main><footer>OUR COZY BUBBLE · NOOR & SAFA</footer></div>
+<div class="profiles"><article class="profile-card safa"><div class="profile-top"><span>PROFILE 01</span><span class="profile-mark">S</span></div><div class="profile-bottom"><div><h3>SAFA</h3><p>One half of our cozy bubble.</p></div><div class="profile-initial">S</div></div><div class="profile-line"></div></article>
+<article class="profile-card noor"><div class="profile-top"><span>PROFILE 02</span><span class="profile-mark">N</span></div><div class="profile-bottom"><div class="profile-initial">N</div><div><h3>NOOR</h3><p>One half of our cozy bubble.</p></div></div><div class="profile-line"></div></article></div><div class="home-foot"><span>NOOR & SAFA</span><span>EST. OUR LITTLE WORLD</span></div></section></main><footer>OUR COZY BUBBLE · NOOR & SAFA</footer></div>
 <div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">Add something</h2><form id="entryForm"><div id="fields"></div><div class="dialog-actions"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary" type="submit">Save entry</button></div></form></div></div>
 <style>
 :root{--ink:#17384d;--muted:#7894a8;--blue:#b9e2f6;--blue2:#dff2fc;--pale:#f4faff;--line:#d7eaf5;--white:#fff;--shadow:0 18px 48px rgba(53,111,145,.09)}
@@ -837,3 +837,9 @@ if(currentPage==='places')list('places','#placesList','Our list of places is wai
 if(currentPage==='reels')list('reels','#reelsList','Save a reel or trend you want to try together.','reels');
 </script>
 </body></html>
+<style>
+/* Profile order and Safa's right-aligned S emblem. */
+.profiles .safa .profile-bottom{justify-content:space-between}
+.profiles .safa .profile-initial{order:2;margin-left:auto}
+.profiles .safa .profile-bottom>div:first-child{order:1}
+</style>
