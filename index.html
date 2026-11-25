@@ -751,6 +751,7 @@ function openForm(type,id=null){
  $('#modal').classList.add('open');
 }
 document.addEventListener('click',event=>{const addButton=event.target.closest('[data-add]');if(addButton){event.preventDefault();try{openForm(addButton.dataset.add)}catch(error){console.error('Could not open entry form:',error);$('#modal').classList.add('open')}}});$('#addCalendarEvent').onclick=()=>openForm('event');$('#cancel').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('open')};
+const diaryWriteButton=document.querySelector('button[data-add="diary"]');if(diaryWriteButton){diaryWriteButton.type='button';diaryWriteButton.onclick=e=>{e.preventDefault();e.stopPropagation();openForm('diary');const firstField=document.querySelector('#fields input[name="title"]');firstField?.focus()}}
 $('#entryForm').onsubmit=async e=>{
  e.preventDefault();
  const form=e.target,fd=new FormData(form),obj={};
