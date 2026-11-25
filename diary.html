@@ -474,6 +474,66 @@ body {
   background-size: 48px 48px !important;
   background-attachment: fixed !important;
 }
+
+/* Pink + lavender palette: replace the previous blue accents without changing layout. */
+:root{
+  --ink:#49365f !important;
+  --muted:#9a86ad !important;
+  --blue:#cdb9e8 !important;
+  --blue2:#eee5f8 !important;
+  --pale:#fbf7ff !important;
+  --line:#e3d5f0 !important;
+  --shadow:0 18px 48px rgba(113,83,145,.10) !important;
+}
+body{color:#49365f !important}
+header{background:rgba(250,244,255,.92) !important;border-color:#e7d9f2 !important}
+.logo{background:linear-gradient(145deg,#d8c7ee,#f7efff) !important;border-color:#bda5dc !important;box-shadow:0 8px 22px #bda5dc35 !important}
+.logo:before,.logo:after{border-color:#a98bcf !important}
+.nav{color:#88739f !important}
+.nav:hover{background:#eee4f8 !important;color:#624b7d !important}
+.nav.active{background:#e8dcf5 !important;border-color:#d1bde8 !important;color:#594071 !important}
+.eyebrow,.heading-note,.profile-top{color:#987eb4 !important}
+.home-intro h2,.page-heading h2,.profile-bottom h3,.brand h1{color:#594071 !important}
+.noor{background:linear-gradient(135deg,#d8c7ee,#eee5f8 75%,#fbf7ff) !important;border-color:#d1bde8 !important}
+.safa{background:linear-gradient(135deg,#fff3f8,#f6e4f0 58%,#ebd9ef) !important;border-color:#e9d4e7 !important}
+.profile-card{box-shadow:0 20px 55px #a98bcf28 !important}
+.profile-mark{border-color:#bda5dc !important;color:#745a91 !important}
+.profile-initial{color:#745a91 !important}
+.profile-line{background:#b79bd5 !important}
+.home-foot,footer{color:#a18db5 !important;border-color:#eadff2 !important}
+.page-heading{background:linear-gradient(110deg,#e8dcf5,#fbf7ff 75%) !important;border-color:#e3d5f0 !important}
+.panel{border-color:#e3d5f0 !important}
+.panel-title{border-color:#eee5f5 !important}
+.panel-title h3,.calendar-top h3,.selected-date h4,.diary-page h3{color:#624b7d !important}
+.primary{background:#cdb9e8 !important;color:#49365f !important;border-color:#bda5dc !important}
+.primary:hover{background:#bfa7df !important}
+.ghost{background:#f3ebfa !important;color:#765d91 !important;border-color:#e1d3ef !important}
+label{color:#846b9e !important}
+input,textarea,select{border-color:#e1d3ef !important;color:#49365f !important;background:#fffaff !important}
+input:focus,textarea:focus,select:focus{border-color:#b79bd5 !important;box-shadow:0 0 0 3px #eee5f8 !important}
+.item{border-color:#eee5f5 !important}
+.item strong{color:#624b7d !important}
+.item p,.item small{color:#8e7aa4 !important}
+.item a{color:#8063a2 !important}
+.item-actions button{background:#f3ebfa !important;color:#80699a !important}
+.calendar-controls button{background:#f7f1fc !important;color:#80699a !important;border-color:#e3d5f0 !important}
+.day{background:#fffaff !important;color:#705a86 !important;border-color:#eee5f5 !important}
+.day.today{border-color:#b79bd5 !important;background:#f7f0fc !important}
+.day.selected{background:#e8dcf5 !important;border-color:#b79bd5 !important;box-shadow:inset 0 0 0 1px #d4c1e8 !important}
+.event-dot,.tag{background:#eee5f8 !important;color:#765d91 !important}
+.photo{background:#f7f0fc !important;border-color:#e3d5f0 !important}
+.diary-desk,.diary-editor{background:linear-gradient(135deg,#eee5f8,#fbf7ff) !important;border-color:#e1d3ef !important}
+.diary-editor-stage{background:repeating-linear-gradient(45deg,#fbf7ff,#fbf7ff 12px,#f1e9f8 12px,#f1e9f8 24px) !important;border-color:#cdb9e8 !important}
+.diary-arrow{border-color:#d8c7ee !important;color:#765d91 !important}
+.diary-editor-sticker{color:#8a6caf !important}
+.diary-editor-sticker.selected{outline-color:#b79bd5 !important}
+.diary-editor-tools .sticker-choice{border-color:#e1d3ef !important;color:#8a6caf !important}
+.diary-editor-tools input[type=range]{accent-color:#a98bcf !important}
+.diary-counter{color:#987eb4 !important}
+.diary-writing{color:#6f5b82 !important}
+.diary-photo-frame,.diary-photo-empty{border-color:#e9dff0 !important}
+#spotifyPlayer{border:1px solid #e3d5f0 !important}
+
 </style>
 <script>
 const missingNode=new Proxy({}, {get:(t,p)=>p==='classList'?new Proxy({}, {get:()=>()=>{}}):p==='querySelector'?()=>null:p==='querySelectorAll'?()=>[]:p==='closest'?()=>null:p==='addEventListener'?()=>{}:undefined,set:()=>true});
